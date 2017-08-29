@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1503618112 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_1_Cascara/main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"funciones.c"
+
+1503618200 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_1_Cascara/funciones.h
+
+1503618793 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_1_Cascara/funciones.c
+
