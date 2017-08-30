@@ -26,7 +26,9 @@ que contenga las funciones para realizar las 4 operaciones.
 
     while(seguir=='s')
     {
-        double operandoA, operandoB;
+        int operandoA, operandoB;
+        int banderaOperandoA = 0;
+        int banderaOperandoB = 0;
 
         printf("1- Ingresar 1er operando (A=x)\n");
         printf("2- Ingresar 2do operando (B=y)\n");
@@ -44,32 +46,52 @@ que contenga las funciones para realizar las 4 operaciones.
         {
             case 1:
                 operandoA = ingresarOperando();
+                banderaOperandoA = 1;
                 break;
             case 2:
                 operandoB = ingresarOperando();
+                banderaOperandoB = 1;
                 break;
             case 3:
-                printf("El resultado de la suma es: %e", sumar(operandoA, operandoB));
+                printf("El resultado de la suma es: %d", sumar(operandoA, operandoB));
                 break;
             case 4:
-                printf("El resultado de la resta es: %e", restar(operandoA, operandoB));
+                printf("El resultado de la resta es: %d", restar(operandoA, operandoB));
                 break;
             case 5:
-                printf("El resultado de la división es: %e", dividir(operandoA, operandoB));
+                if(dividir(operandoA, operandoB)[1] >= 1)
+                {
+                    printf("Error, división por 0(cero).\n");
+                }
+                else
+                {
+                    printf("El resultado de la división es: %e", dividir(operandoA, operandoB)[0]);
+                }
                 break;
             case 6:
-                printf("El resultado de la multiplicación es: %e", multiplicar(operandoA, operandoB));
+                printf("El resultado de la multiplicación es: %d", multiplicar(operandoA, operandoB));
                 break;
             case 7:
-                printf("El resultado de la factorial es: %e", factorizar(operandoA, operandoB));
+                printf("El resultado de la factorial es: %d", factorizar(operandoA));
                 break;
             case 8:
+                printf("El resultado de la suma es: %d", sumar(operandoA, operandoB));
+                printf("El resultado de la resta es: %d", restar(operandoA, operandoB));
+                if(dividir(operandoA, operandoB)[1] >= 1)
+                {
+                    printf("Error, división por 0(cero).\n");
+                }
+                else
+                {
+                    printf("El resultado de la división es: %e", dividir(operandoA, operandoB)[0]);
+                }
+                printf("El resultado de la multiplicación es: %d", multiplicar(operandoA, operandoB));
+                printf("El resultado de la factorial es: %d", factorizar(operandoA));
                 break;
             case 9:
                 seguir = 'n';
                 break;
         }
     }
-
     return 0;
 }

@@ -7,43 +7,64 @@ Calcular la multiplicacion (A*B)
 Calcular el factorial (A!)
 Calcular todas las operaciones
 Salir*/
-double sumar(double numeroUno, double numeroDos)
+#include "funciones.h"
+int sumar(int numeroUno, int numeroDos)
 {
-    double resultado = numeroUno + numeroDos;
+    int resultado = numeroUno + numeroDos;
     return resultado;
 }
-double restar(double numeroUno, double numeroDos)
+int restar(int numeroUno, int numeroDos)
 {
-    double resultado = numeroUno - numeroDos;
+    int resultado = numeroUno - numeroDos;
     return resultado;
 }
-double multiplicar(double numeroUno, double numeroDos)
+int multiplicar(int numeroUno, int numeroDos)
 {
-    double resultado = numeroUno * numeroDos;
+    int resultado = numeroUno * numeroDos;
     return resultado;
 }
-double dividir(double numeroUno, double numeroDos)
+double * dividir(int numeroUno, int numeroDos)
 {
-    double resultado;
+    double resultado[2];
     if(numeroDos != 0)
     {
-        resultado = numeroUno / numeroDos;
+        resultado[0] = numeroUno / numeroDos;
+        resultado[1] = 0;
     }
     else
     {
-        printf("Error, división por 0(cero).\n");
+        resultado[1] = 1;
     }
     return resultado;
 }
-double factorizar(double numeroUno, double numeroDos)
+long long int factorizar(int numeroUno)
 {
-    double resultado = numeroUno + numeroDos;
+    long long int resultado = 1;
+    int i;
+    for(i = numeroUno; i > 1; i--)
+    {
+        resultado = resultado * i;
+    }
     return resultado;
 }
-float ingresarOperando()
+int ingresarOperando()
 {
-    float operando;
-    printf("Ingrese un número: ");
-    scanf("%f", &operando);
+    int operando;
+    printf("Ingrese un número entero: ");
+    scanf("%d", &operando);
     return operando;
 }
+int * verificarOperandos(int banderaOperandoA, int banderaOperandoB)
+{
+    double estadoOperandos[3];
+    if(banderaOperandoA == 1)
+    {
+        
+    }
+    else
+    {
+        estadoOperandos[1] = 1;
+    }
+    return estadoOperandos;
+}
+
