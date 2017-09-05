@@ -23,12 +23,12 @@ int multiplicar(int numeroUno, int numeroDos)
     int resultado = numeroUno * numeroDos;
     return resultado;
 }
-double * dividir(int numeroUno, int numeroDos)
+float * dividir(int numeroUno, int numeroDos)
 {
-    double resultado[2];
+    float resultado[2];
     if(numeroDos != 0)
     {
-        resultado[0] = numeroUno / numeroDos;
+        resultado[0] = (numeroUno + 0.0) / numeroDos;
         resultado[1] = 0;
     }
     else
@@ -54,17 +54,37 @@ int ingresarOperando()
     scanf("%d", &operando);
     return operando;
 }
-int * verificarOperandos(int banderaOperandoA, int banderaOperandoB)
+/*int * verificarOperandos(int banderaOperandoA, int banderaOperandoB, int operandoB)
 {
     double estadoOperandos[3];
-    if(banderaOperandoA == 1)
+    if(banderaOperandoA == 0)
     {
-        
+        //printf("Error: falta el primer operando.");
+        estadoOperandos[0] = 0;
+    }
+    else
+    {
+        estadoOperandos[0] = 1;
+    }
+    if(banderaOperandoB == 0)
+    {
+        //printf("Error: falta el primer operando.");
+        estadoOperandos[1] = 0;
     }
     else
     {
         estadoOperandos[1] = 1;
     }
+
+    if(operandoB == 0)
+    {
+        estadoOperandos[2] = 0;
+    }
+    else
+    {
+        estadoOperandos[2] = 1;
+    }
+
     return estadoOperandos;
-}
+}*/
 
