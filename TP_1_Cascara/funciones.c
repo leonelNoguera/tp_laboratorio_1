@@ -23,23 +23,22 @@ int multiplicar(int numeroUno, int numeroDos)
     int resultado = numeroUno * numeroDos;
     return resultado;
 }
-float * dividir(int numeroUno, int numeroDos)
+float dividir(int numeroUno, int numeroDos)
 {
-    float resultado[2];
+    float resultado;
     if(numeroDos != 0)
     {
-        resultado[0] = (numeroUno + 0.0) / numeroDos;
-        resultado[1] = 0;
-    }
-    else
-    {
-        resultado[1] = 1;
+        resultado = (numeroUno + 0.0) / numeroDos;
     }
     return resultado;
 }
 long long int factorizar(int numeroUno)
 {
-    long long int resultado = 1;
+    long long int resultado;
+    if(numeroUno == 0)
+    {
+        resultado = 1;
+    }
     int i;
     for(i = numeroUno; i > 1; i--)
     {
@@ -54,37 +53,34 @@ int ingresarOperando()
     scanf("%d", &operando);
     return operando;
 }
-/*int * verificarOperandos(int banderaOperandoA, int banderaOperandoB, int operandoB)
+int verificarOperandos(int banderaOperandoA, int banderaOperandoB, int operandoA, int operandoB, char operacionUno, char operacionDos, char operacionTres, char operacionCuatro, char operacionCinco)
 {
-    double estadoOperandos[3];
-    if(banderaOperandoA == 0)
+    // bandera op1, op2, op1, op2, ope1(s), ope2(r), ope3(d), ope4(m), ope5(f) -- nada(n)
+
+    if(banderaOperandoA == 1 && banderaOperandoB == 1)
     {
-        //printf("Error: falta el primer operando.");
-        estadoOperandos[0] = 0;
+        printf("Todos los operandos están asignados.\n");
+        if(operacionTres == 'd')
+        {
+            if(operandoB == 0)
+            {
+                printf("Advertencia: No se puede dividir por 0(cero).\n");
+            }
+        }
+        if(operacionCinco == 'f')
+        {
+            if(operandoA < 0)
+            {
+                printf("Advertencia: No se puede factorizar un número negativo.\n");
+            }
+        }
     }
     else
     {
-        estadoOperandos[0] = 1;
-    }
-    if(banderaOperandoB == 0)
-    {
-        //printf("Error: falta el primer operando.");
-        estadoOperandos[1] = 0;
-    }
-    else
-    {
-        estadoOperandos[1] = 1;
+        printf("Falta algún operando.\n");
     }
 
-    if(operandoB == 0)
-    {
-        estadoOperandos[2] = 0;
-    }
-    else
-    {
-        estadoOperandos[2] = 1;
-    }
-
+    int estadoOperandos = 0;
     return estadoOperandos;
-}*/
+}
 

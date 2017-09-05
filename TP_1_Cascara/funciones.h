@@ -25,7 +25,7 @@ int multiplicar(int, int);
 * \param Recibe otro número entero que será el divisor.
 * \return Retorna un vector tipo float de 2 elementos en el cual el primero es el cociente de los 2 números ingresados y el segundo es una bandera que vale 0 si el dividor es distinto de 0 y vale 1 si el dividor es igual a 0.
 */
-float * dividir(int, int);
+float dividir(int, int);
 /** \brief Permite el cálculo del factorial de un número.
 * \param Recibe un número entero.
 * \return Retorna el factorial del número ingresado.
@@ -35,4 +35,4 @@ long long int factorizar(int);
 * \return Retorna el número ingresado.
 */
 int ingresarOperando();
-//int * verificarOperandos(int, int, int);
+int verificarOperandos(int, int, int, int, char, char, char, char, char);
