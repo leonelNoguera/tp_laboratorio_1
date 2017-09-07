@@ -1,5 +1,3 @@
-/* main.c
-Autor: Marcelo Leonel Noguera*/
 /*Hacer una calculadora. Para ello el programa iniciará y contará con un menú de opciones:
 Ingresar 1er operando (A=x)
 Ingresar 2do operando (B=y)
@@ -34,11 +32,11 @@ int main()
     {
         if(banderaOperandoA == 1)
         {
-            printf("\n1- Ingresar 1er operando (A=%d)\n", operandoA);
+            printf("1- Ingresar 1er operando (A=%d)\n", operandoA);
         }
         else
         {
-            printf("\n1- Ingresar 1er operando (A=x)\n");
+            printf("1- Ingresar 1er operando (A=x)\n");
         }
         if(banderaOperandoB == 1)
         {
@@ -57,7 +55,8 @@ int main()
         printf("8- Calcular todas las operaciones\n");
         printf("9- Salir\n");
 
-        verificarOperandos(banderaOperandoA, banderaOperandoB, operandoA, operandoB, 'd', 'f');
+        // bandera op1, op2, op1, op2, ope1(s), ope2(r), ope3(d), ope4(m), ope5(f) -- nada(n)
+        verificarOperandos(banderaOperandoA, banderaOperandoB, operandoA, operandoB, 's', 'r', 'd', 'm', 'f');
 
         scanf("%d",&opcion);
 
@@ -65,24 +64,32 @@ int main()
         {
             case 1:
                 system("cls");
+                //operandoA = ingresarOperandoEntero();
                 operandoA = ingresarOperandoEntero();
-                banderaOperandoA = 1;
+                //if(!operandoA == -999999999)
+                //{
+                    banderaOperandoA = 1;
+                //}
                 break;
             case 2:
                 system("cls");
+                //operandoB = ingresarOperandoEntero();
                 operandoB = ingresarOperandoEntero();
-                banderaOperandoB = 1;
+                //if(!operandoB == -999999999)
+                //{
+                    banderaOperandoB = 1;
+                //}
                 break;
             case 3:
                 if(banderaOperandoA == 1 && banderaOperandoB == 1)
                 {
-                    printf("\nEl resultado de la suma es: %d\n", sumar(operandoA, operandoB));
+                    printf("El resultado de la suma es: %d\n", sumar(operandoA, operandoB));
                 }
                 break;
             case 4:
                 if(banderaOperandoA == 1 && banderaOperandoB == 1)
                 {
-                    printf("\nEl resultado de la resta es: %d\n", restar(operandoA, operandoB));
+                    printf("El resultado de la resta es: %d\n", restar(operandoA, operandoB));
                 }
                 break;
             case 5:
@@ -90,20 +97,20 @@ int main()
                 {
                     if(operandoB != 0)
                     {
-                        printf("\nEl resultado de la divisi%cn es: %.2f\n", 162, dividir(operandoA, operandoB));
+                        printf("El resultado de la divisi%cn es: %.2f\n", 162, dividir(operandoA, operandoB));
                     }
                 }
                 break;
             case 6:
                 if(banderaOperandoA == 1 && banderaOperandoB == 1)
                 {
-                    printf("\nEl resultado de la multiplicaci%cn es: %d\n", 162, multiplicar(operandoA, operandoB));
+                    printf("El resultado de la multiplicaci%cn es: %d\n", 162, multiplicar(operandoA, operandoB));
                 }
                 break;
             case 7:
                 if(banderaOperandoA == 1 && operandoA >= 0)
                 {
-                    printf("\nEl resultado de la factorizaci%cn es: %d\n", 162, factorizar(operandoA));
+                    printf("El resultado de la factorizaci%cn es: %d\n", 162, factorizar(operandoA));
                 }
                 break;
             case 8:
@@ -112,7 +119,7 @@ int main()
                     if(banderaOperandoA == 1 && banderaOperandoB == 1)
                     {
 
-                        printf("\nEl resultado de la suma es: %d\n", sumar(operandoA, operandoB));
+                        printf("El resultado de la suma es: %d\n", sumar(operandoA, operandoB));
                         printf("El resultado de la resta es: %d\n", restar(operandoA, operandoB));
 
                         if(operandoB != 0)
@@ -128,7 +135,7 @@ int main()
                 }
                 else
                 {
-                    printf("\nFalta alg%cn operando.\n", 163);
+                    printf("Falta alg%cn operando.\n", 163);
                 }
 
                 break;

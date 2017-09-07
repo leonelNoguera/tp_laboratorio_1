@@ -1,5 +1,3 @@
-/* funciones.h
-Autor: Marcelo Leonel Noguera*/
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
 
@@ -33,17 +31,9 @@ float dividir(int, int);
 * \return Retorna el factorial del número ingresado.
 */
 long long int factorizar(int);
-/** \brief Permite ingresar un número con la función scanf.
+/** \brief Permite ingresar un número con scanf().
 * \return Retorna el número ingresado.
 */
 int ingresarOperandoEntero();
-
-/** \brief Permite verificar los valores de 2 operandos y si funcionarían para determinadas operaciones.
-* \param Recibe un entero: Es 1 si el primer operando está asignado por el usuario o 0 si no lo está.
-* \param Recibe un entero: Es 1 si el segundo operando está asignado por el usuario o 0 si no lo está.
-* \param Recibe un entero que corresponde al valor del primer operando.
-* \param Recibe un entero que corresponde al valor del segundo operando.
-* \param Recibe un caracter que corresponde a la inicial de la operacion división, si se le asigna 'd' verificará si se puede dividir el número.
-* \param Recibe un caracter que corresponde a la inicial de la operacion factorización, si se le asigna 'f' verificará si se puede factorizar el número.
-*/
-void verificarOperandos(int, int, int, int, char, char);
+//int * ingresarOperandoEntero();
+int verificarOperandos(int, int, int, int, char, char, char, char, char);
