@@ -25,14 +25,14 @@ int obtenerEspacioLibre(EPersona lista[]);
  * @param dni el dni a ser buscado en el array.
  * @return el indice en donde se encuentra el elemento que coincide con el parametro dni
  */
-void agregarPersona(EPersona[], char[], int, int);
-void borrarPersonaPorNombre(EPersona[], char[]);
+void agregarPersona(EPersona[], int);
 void borrarPersonaPorDni(EPersona[], int);
 int obtenerEspacioDisponible(EPersona[]);
-int buscarPersonaPorNombre(EPersona[], char[]);
-int buscarPersonaPorDni(EPersona[], int);
-void mostrarListaOrdenadaPorNombre(EPersona[]);
+int buscarPersonaPorDni(EPersona[], int, int);
+void mostrarListaOrdenadaPorNombre(EPersona[], int);
 void mostrarGraficoDeBarras(EPersona[]);
 int estadoDeLaEstructuraPersona(EPersona[]);
+int ingresarEdadDeLaPersona();
+int ingresarDniDeLaPersona();
 
 #endif // FUNCIONES_H_INCLUDED

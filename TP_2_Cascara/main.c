@@ -30,15 +30,10 @@ Gráfico para una estadística de 6 personas con edad menor a 18, 4 personas con
 #include <string.h>
 #include "funciones.h"
 #include "funciones.c"
+#include "generadorDeDatos.h"
+#include "generadorDeDatos.c"
 
-struct persona
-    {
-        char nombre[50];
-        int edad;
-        int estado;
-        int dni;
-    };
-struct persona personas[20] = {};
+int cantidadDePersonas = 20;
 int i;
 
 int main()
@@ -46,9 +41,9 @@ int main()
     char seguir='s';
     int opcion=0;
 
-    EPersona personas[20] = {};
+    EPersona personas[cantidadDePersonas];
 
-    for(i=0; i<20; i++)
+    for(i=0; i<cantidadDePersonas; i++)
     {
         personas[i].estado = 0;
     }
@@ -66,35 +61,36 @@ int main()
         switch(opcion)
         {
             case 1:
-                agregarPersona(personas, "Pedro", 17, 40343654);
-                agregarPersona(personas, "Juio", 18, 40343654);
-                agregarPersona(personas, "Ricardo", 14, 40343654);
-                agregarPersona(personas, "Colvy", 12, 40343654);
-                agregarPersona(personas, "Gustavo", 16, 40343654);
-
-                agregarPersona(personas, "Tomas", 19, 40343654);
-                agregarPersona(personas, "Denis", 20, 40343654);
-                agregarPersona(personas, "Raul", 28, 40343654);
-                agregarPersona(personas, "Mateo", 35, 40343654);
-                agregarPersona(personas, "Omar", 22, 40343654);
-                agregarPersona(personas, "Guillermo", 34, 40343654);
-                agregarPersona(personas, "Cecilia", 20, 40343654);
-
-                agregarPersona(personas, "Monica", 40, 40343654);
-                agregarPersona(personas, "Pamela", 42, 40343654);
-                agregarPersona(personas, "Rebeca", 44, 40343654);
-                agregarPersona(personas, "Jesica", 70, 40343654);
-                agregarPersona(personas, "Sabrina", 36, 40343654);
-                agregarPersona(personas, "Nancy", 37, 40343654);
-                agregarPersona(personas, "Jimena", 38, 40343654);
-                agregarPersona(personas, "Ana", 50, 40343654);
+                /*agregarPersona(personas, "Pedro", generarEdadAleatoria(10, 40), 40139077, cantidadDePersonas);
+                agregarPersona(personas, "Julio", generarEdadAleatoria(10, 40), 40139077, cantidadDePersonas);
+                agregarPersona(personas, "Ricardo", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
+                agregarPersona(personas, "Colvy", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
+                agregarPersona(personas, "Gustavo", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
+                agregarPersona(personas, "Tomas", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
+                agregarPersona(personas, "Denis", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
+                agregarPersona(personas, "Raul", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
+                agregarPersona(personas, "Omar", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
+                agregarPersona(personas, "Omar", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
+                agregarPersona(personas, "Guillermo", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
+                agregarPersona(personas, "Cecilia", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
+                agregarPersona(personas, "Monica", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
+                agregarPersona(personas, "Pamela", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
+                agregarPersona(personas, "Rebeca", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
+                agregarPersona(personas, "Jesica", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
+                agregarPersona(personas, "Sabrina", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
+                agregarPersona(personas, "Nancy", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
+                agregarPersona(personas, "Jimena", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
+                agregarPersona(personas, "Ana", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);*/
+                agregarPersona(personas, cantidadDePersonas);
                 break;
             case 2:
-                borrarPersonaPorNombre(personas, "Mateo");
-                //borrarPersonaPorDni(personas, n);
+                for(i=0; i<10; i++)
+                {
+                    borrarPersonaPorDni(personas, cantidadDePersonas);
+                }
                 break;
             case 3:
-                mostrarListaOrdenadaPorNombre(personas);
+                mostrarListaOrdenadaPorNombre(personas, cantidadDePersonas);
                 break;
             case 4:
                 mostrarGraficoDeBarras(personas);
@@ -102,12 +98,8 @@ int main()
             case 5:
                 seguir = 'n';
                 break;
-            //mostrarListaOrdenadaPorNombre(personas);
         }
     }
 
     return 0;
 }
-
-
-

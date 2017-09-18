@@ -6,8 +6,32 @@
 	"funciones.h"
 	"funciones.c"
 
+1505476402 .c"
+
 1505485282 d:\marcelonoguera\tp_2_cascara\funciones.h
 
 1505488087 d:\marcelonoguera\tp_2_cascara\funciones.c
 	"funciones.h"
+
+1505488087 .h"
+
+1505776670 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_2_Cascara/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"funciones.c"
+	"generadorDeDatos.h"
+	"generadorDeDatos.c"
+
+1505776665 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_2_Cascara/funciones.h
+
+1505776790 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_2_Cascara/funciones.c
+	"funciones.h"
+
+1505526645 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_2_Cascara/generadorDeDatos.h
+
+1505527271 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_2_Cascara/generadorDeDatos.c
+	"generadorDeDatos.h"
+	<stdlib.h>
 

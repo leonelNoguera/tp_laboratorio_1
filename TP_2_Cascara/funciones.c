@@ -2,15 +2,24 @@
 /*funciones.c
 Autor: Marcelo Leonel Noguera
 08/09/2017*/
-void agregarPersona(EPersona personas[], char nombre[], int edad, int dni)
+void agregarPersona(EPersona personas[], int cantidadDePersonas)
 {
+    char nombre[50];
+
+    printf("Ingrese el nombre de la persona: ");
+    fflush(stdin);
+    scanf("%s",&nombre);
+
+    int edad = ingresarEdadDeLaPersona();
+    int dni = ingresarDniDeLaPersona();
     if(estadoDeLaEstructuraPersona(personas) != 2)
     {
         if(obtenerEspacioDisponible(personas) != -1)
         {
-            if(buscarPersonaPorDni(personas, dni) == -1)
+            int indice;
+            if(buscarPersonaPorDni(personas, dni, cantidadDePersonas) == -1)
             {
-                int indice = obtenerEspacioDisponible(personas);
+                indice = obtenerEspacioDisponible(personas);
                 strcpy(personas[indice].nombre, nombre);
                 personas[indice].edad = edad;
                 personas[indice].dni = dni;
@@ -18,7 +27,7 @@ void agregarPersona(EPersona personas[], char nombre[], int edad, int dni)
             }
             else
             {
-                printf("El DNI de la persona ya estaba registrado.\n");
+                printf("    Error: La persona ya está registrada con ese DNI\n");
             }
         }
     }
@@ -26,7 +35,7 @@ void agregarPersona(EPersona personas[], char nombre[], int edad, int dni)
     {
         if(estadoDeLaEstructuraPersona(personas) == 2)
         {
-            printf("No hay espacios disponibles.\n");
+            printf("    Error: No hay espacios disponibles.\n");
         }
         else
         {
@@ -35,26 +44,6 @@ void agregarPersona(EPersona personas[], char nombre[], int edad, int dni)
             personas[0].dni = dni;
             personas[0].estado = 1;
         }
-    }
-}
-
-void borrarPersonaPorNombre(EPersona personas[], char nombre[])
-{
-    if(buscarPersonaPorNombre(personas, nombre) != -1)
-    {
-        int indice = buscarPersonaPorNombre(personas, nombre);
-        if(personas[indice].estado != 0)
-        {
-            personas[indice].estado = 0;
-        }
-        else
-        {
-            printf("La persona se eliminó previamente y fue hallada en el historial.\n");
-        }
-    }
-    else
-    {
-        printf("No se encontró la persona.\n");
     }
 }
 
@@ -84,25 +73,7 @@ int obtenerEspacioDisponible(EPersona personas[])
     return indiceDelEspacioDisponible;
 }
 
-int buscarPersonaPorNombre(EPersona personas[], char nombre[])
-{
-    int i;
-    for(i=0; i<20; i++)
-    {
-        if(strcmp(personas[i].nombre, nombre) == 0)
-        {
-            return i;
-            break;
-        }
-        else
-        {
-            return -1;
-        }
-        return 0;
-    }
-}
-
-int buscarPersonaPorDni(EPersona personas[], int dni)
+int buscarPersonaPorDni(EPersona personas[], int dni, int cantidadDePersonas)
 {
     int resultado = -1;
     int i;
@@ -116,27 +87,28 @@ int buscarPersonaPorDni(EPersona personas[], int dni)
     }
     return resultado;
 }
-void borrarPersonaPorDni(EPersona personas[], int dni)
+void borrarPersonaPorDni(EPersona personas[], int cantidadDePersonas)
 {
-    if(buscarPersonaPorDni(personas, dni) != -1)
+    int dni = ingresarDniDeLaPersona();
+    if(buscarPersonaPorDni(personas, dni, cantidadDePersonas) != -1)
     {
-        int indice = buscarPersonaPorDni(personas, dni);
+        int indice = buscarPersonaPorDni(personas, dni, cantidadDePersonas);
         if(personas[indice].estado != 0)
         {
             personas[indice].estado = 0;
         }
         else
         {
-            printf("La persona se eliminó previamente y fue hallada en el historial.\n");
+            printf("    Error: La persona se eliminó previamente.\n");
         }
     }
     else
     {
-        printf("No se encontró la persona.\n");
+        printf("    Error: No se encontró la persona.\n");
     }
 }
 
-void mostrarListaOrdenadaPorNombre(EPersona personas[])
+void mostrarListaOrdenadaPorNombre(EPersona personas[], int cantidadDePersonas)
 {
     if(estadoDeLaEstructuraPersona(personas))
     {
@@ -175,18 +147,18 @@ void mostrarListaOrdenadaPorNombre(EPersona personas[])
             }
         }
 
-        printf(" | Nombre --- DNI --- Edad\n");
+        printf(" | Nombre --- DNI --- Edad |\n");
         for(i=0; i<20; i++)
         {
             if(personas[i].estado)
             {
-                printf("%s - %d - %d\n", &(personasOrdenadasPorNombres[i].nombre), personasOrdenadasPorNombres[i].dni, personasOrdenadasPorNombres[i].edad);
+                printf(" | %s - %d - %d\n", personasOrdenadasPorNombres[i].nombre, personasOrdenadasPorNombres[i].dni, personasOrdenadasPorNombres[i].edad);
             }
         }
     }
     else
     {
-        printf("La estructura de datos está vacía.\n");
+        printf("    Error: La estructura de datos está vacía.\n");
     }
 }
 
@@ -289,14 +261,14 @@ void mostrarGraficoDeBarras(EPersona personas[])
     }
     else
     {
-        printf("La estructura de datos está vacía.\n");
+        printf("    Error: La estructura de datos está vacía.\n");
     }
 }
 
 int estadoDeLaEstructuraPersona(EPersona personas[])
 {
     // 0 -- vacio , 1 -- alguno seteado, 2 -- lleno
-    int estadoDeLaEstructura;
+    int estadoDeLaEstructura = 0;
     int contadorElementosSeteados = 0;
     int i;
     for(i=0; i<20; i++)
@@ -306,14 +278,58 @@ int estadoDeLaEstructuraPersona(EPersona personas[])
             estadoDeLaEstructura = 1;
             contadorElementosSeteados++;
         }
-        else
-        {
-            estadoDeLaEstructura = 0;
-        }
         if(contadorElementosSeteados == 20)
         {
             estadoDeLaEstructura = 2;
         }
     }
     return estadoDeLaEstructura;
+}
+
+int ingresarEdadDeLaPersona()
+{
+    int edad;
+    int flag = 0;
+
+    while(!flag)
+    {
+        printf("Ingrese la edad de la persona: ");
+        fflush(stdin);
+        scanf("%d",&edad);
+
+        if(!(edad < 0))
+        {
+            flag = 1;
+        }
+        else
+        {
+            printf("    Error: Número no válido.\n");
+            flag = 0;
+        }
+    }
+    return edad;
+}
+
+int ingresarDniDeLaPersona()
+{
+    int dni;
+    int flag = 0;
+
+    while(!flag)
+    {
+        printf("Ingrese el DNI de la persona: ");
+        fflush(stdin);
+        scanf("%d",&dni);
+
+        if(!(dni <= 0))
+        {
+            flag = 1;
+        }
+        else
+        {
+            printf("    Error: Número no válido.\n");
+            flag = 0;
+        }
+    }
+    return dni;
 }
