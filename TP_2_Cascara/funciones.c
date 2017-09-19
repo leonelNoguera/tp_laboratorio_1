@@ -1,7 +1,7 @@
-#include "funciones.h"
 /*funciones.c
 Autor: Marcelo Leonel Noguera
 08/09/2017*/
+#include "funciones.h"
 void agregarPersona(EPersona personas[], int cantidadDePersonas)
 {
     char nombre[50];
@@ -289,15 +289,17 @@ int estadoDeLaEstructuraPersona(EPersona personas[])
 int ingresarEdadDeLaPersona()
 {
     int edad;
+    char edadIngresada[4];
     int flag = 0;
 
     while(!flag)
     {
         printf("Ingrese la edad de la persona: ");
         fflush(stdin);
-        scanf("%d",&edad);
+        scanf("%s",&edadIngresada);
+        edad = atoi(edadIngresada);
 
-        if(!(edad < 0))
+        if(!(edad <= 0))
         {
             flag = 1;
         }
@@ -313,13 +315,16 @@ int ingresarEdadDeLaPersona()
 int ingresarDniDeLaPersona()
 {
     int dni;
+    char dniIngresado[10];
     int flag = 0;
 
     while(!flag)
     {
         printf("Ingrese el DNI de la persona: ");
         fflush(stdin);
-        scanf("%d",&dni);
+        scanf("%s",&dniIngresado);
+
+        dni = atoi(dniIngresado);
 
         if(!(dni <= 0))
         {
@@ -327,7 +332,7 @@ int ingresarDniDeLaPersona()
         }
         else
         {
-            printf("    Error: Número no válido.\n");
+            printf("    Error: No es un número válido.\n");
             flag = 0;
         }
     }

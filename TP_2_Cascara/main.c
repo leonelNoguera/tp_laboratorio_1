@@ -30,14 +30,23 @@ Gráfico para una estadística de 6 personas con edad menor a 18, 4 personas con
 #include <string.h>
 #include "funciones.h"
 #include "funciones.c"
-#include "generadorDeDatos.h"
-#include "generadorDeDatos.c"
 
 int cantidadDePersonas = 20;
 int i;
 
 int main()
 {
+
+    /*char dni[10];
+    for(i=0; i<10; i++)
+    {
+        printf("Ingrese el DNI de la persona: ");
+        fflush(stdin);
+        scanf("%s",&dni);
+
+        printf("\n-- %d --\n", atoi(dni));
+    }*/
+
     char seguir='s';
     int opcion=0;
 
@@ -46,6 +55,7 @@ int main()
     for(i=0; i<cantidadDePersonas; i++)
     {
         personas[i].estado = 0;
+        personas[i].dni = 0;
     }
 
     while(seguir=='s')
@@ -53,7 +63,7 @@ int main()
         printf("1- Agregar persona\n");
         printf("2- Borrar persona\n");
         printf("3- Imprimir lista ordenada por  nombre\n");
-        printf("4- Imprimir grafico de edades\n\n");
+        printf("4- Imprimir grafico de edades\n");
         printf("5- Salir\n");
 
         scanf("%d",&opcion);
@@ -61,33 +71,10 @@ int main()
         switch(opcion)
         {
             case 1:
-                /*agregarPersona(personas, "Pedro", generarEdadAleatoria(10, 40), 40139077, cantidadDePersonas);
-                agregarPersona(personas, "Julio", generarEdadAleatoria(10, 40), 40139077, cantidadDePersonas);
-                agregarPersona(personas, "Ricardo", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
-                agregarPersona(personas, "Colvy", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
-                agregarPersona(personas, "Gustavo", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
-                agregarPersona(personas, "Tomas", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
-                agregarPersona(personas, "Denis", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
-                agregarPersona(personas, "Raul", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
-                agregarPersona(personas, "Omar", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
-                agregarPersona(personas, "Omar", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
-                agregarPersona(personas, "Guillermo", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
-                agregarPersona(personas, "Cecilia", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
-                agregarPersona(personas, "Monica", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
-                agregarPersona(personas, "Pamela", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
-                agregarPersona(personas, "Rebeca", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
-                agregarPersona(personas, "Jesica", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
-                agregarPersona(personas, "Sabrina", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
-                agregarPersona(personas, "Nancy", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
-                agregarPersona(personas, "Jimena", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);
-                agregarPersona(personas, "Ana", generarEdadAleatoria(10, 40), generarDniAleatorio(), cantidadDePersonas);*/
                 agregarPersona(personas, cantidadDePersonas);
                 break;
             case 2:
-                for(i=0; i<10; i++)
-                {
-                    borrarPersonaPorDni(personas, cantidadDePersonas);
-                }
+                borrarPersonaPorDni(personas, cantidadDePersonas);
                 break;
             case 3:
                 mostrarListaOrdenadaPorNombre(personas, cantidadDePersonas);

@@ -15,18 +15,16 @@
 
 1505488087 .h"
 
-1505776670 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_2_Cascara/main.c
+1505847144 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_2_Cascara/main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"funciones.h"
 	"funciones.c"
-	"generadorDeDatos.h"
-	"generadorDeDatos.c"
 
 1505776665 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_2_Cascara/funciones.h
 
-1505776790 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_2_Cascara/funciones.c
+1505845811 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_2_Cascara/funciones.c
 	"funciones.h"
 
 1505526645 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_2_Cascara/generadorDeDatos.h

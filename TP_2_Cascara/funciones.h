@@ -18,7 +18,6 @@ typedef struct
  * @return el primer indice disponible
  */
 int obtenerEspacioLibre(EPersona lista[]);
-
 /**
  * Obtiene el indice que coincide con el dni pasado por parametro.
  * @param lista el array se pasa como parametro.
@@ -33,6 +32,11 @@ void mostrarListaOrdenadaPorNombre(EPersona[], int);
 void mostrarGraficoDeBarras(EPersona[]);
 int estadoDeLaEstructuraPersona(EPersona[]);
 int ingresarEdadDeLaPersona();
+/**
+ * Obtiene el primer indice libre del array.
+ * @param lista el array se pasa como parametro.
+ * @return el primer indice disponible
+ */
 int ingresarDniDeLaPersona();
 
 #endif // FUNCIONES_H_INCLUDED
