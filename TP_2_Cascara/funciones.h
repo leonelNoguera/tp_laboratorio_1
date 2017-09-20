@@ -11,20 +11,29 @@ typedef struct
     int estado;
     int dni;
 }EPersona;
-
+/**
+ * Pide el nombre de la persona, su edad y su DNI para guardar la información.
+ * @param Recibe el vector de la estructura.
+ * @param Recibe la longitud del vector.
+ */
 void agregarPersona(EPersona[], int);
+/**
+ * Obtiene el indice que coincide con el dni pasado por parametro. LLama a la función "ingresarDniDeLaPersona" para obtener el DNI.
+ * @param Recibe el vector de la estructura.
+ * @param Recibe la longitud del vector.
+ */
 void borrarPersonaPorDni(EPersona[], int);
 /**
- * Obtiene el índice del primer espacio libre del vector EPersona
- * @param recibe el vector de la estructura
+ * Obtiene el índice del primer espacio libre del vector EPersona.
+ * @param Recibe el vector de la estructura.
  * @return Retorna el índice del primer espacio libre del vector, retorna -1 si no hay espacio disponible.
  */
 int obtenerEspacioDisponible(EPersona[]);
 /**
  * Obtiene el indice que coincide con el dni pasado por parametro.
- * @param recibe el vector de la estructura
- * @param recibe el número de DNI que se desea buscar
- * @param recibe la longitud del vector
+ * @param Recibe el vector de la estructura.
+ * @param Recibe el número de DNI que se desea buscar.
+ * @param Recibe la longitud del vector.
  * @return Retorna el indice en donde se encuentra el elemento que coincide con el DNI, retorna -1 si no fue hallado.
  */
 int buscarPersonaPorDni(EPersona[], int, int);
