@@ -27,7 +27,7 @@ void agregarPersona(EPersona personas[], int cantidadDePersonas)
             }
             else
             {
-                printf("    Error: La persona ya está registrada con ese DNI\n");
+                printf("    Error: La persona ya est%c registrada con ese DNI\n", 160);
             }
         }
     }
@@ -49,7 +49,7 @@ void agregarPersona(EPersona personas[], int cantidadDePersonas)
 
 int obtenerEspacioDisponible(EPersona personas[])
 {
-    int indiceDelEspacioDisponible;
+    int indiceDelEspacioDisponible = 0;
     if(estadoDeLaEstructuraPersona(personas))
     {
         int i;
@@ -65,10 +65,6 @@ int obtenerEspacioDisponible(EPersona personas[])
                 indiceDelEspacioDisponible = -1;
             }
         }
-    }
-    else
-    {
-       indiceDelEspacioDisponible = 0;
     }
     return indiceDelEspacioDisponible;
 }
@@ -99,12 +95,12 @@ void borrarPersonaPorDni(EPersona personas[], int cantidadDePersonas)
         }
         else
         {
-            printf("    Error: La persona se eliminó previamente.\n");
+            printf("    Error: La persona se elimin%c previamente.\n", 162);
         }
     }
     else
     {
-        printf("    Error: No se encontró la persona.\n");
+        printf("    Error: No se encontr%c la persona.\n", 162);
     }
 }
 
@@ -158,7 +154,7 @@ void mostrarListaOrdenadaPorNombre(EPersona personas[], int cantidadDePersonas)
     }
     else
     {
-        printf("    Error: La estructura de datos está vacía.\n");
+        printf("    Error: La estructura de datos est%c vac%ca.\n", 160, 161);
     }
 }
 
@@ -261,7 +257,7 @@ void mostrarGraficoDeBarras(EPersona personas[])
     }
     else
     {
-        printf("    Error: La estructura de datos está vacía.\n");
+        printf("    Error: La estructura de datos est%c vac%ca.\n", 160, 161);
     }
 }
 
@@ -305,7 +301,7 @@ int ingresarEdadDeLaPersona()
         }
         else
         {
-            printf("    Error: Número no válido.\n");
+            printf("    Error: N%cmero no v%clido.\n", 163, 160);
             flag = 0;
         }
     }
@@ -332,7 +328,7 @@ int ingresarDniDeLaPersona()
         }
         else
         {
-            printf("    Error: No es un número válido.\n");
+            printf("    Error: No es un n%cmero v%clido.\n", 163, 160);
             flag = 0;
         }
     }

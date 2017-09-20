@@ -12,30 +12,33 @@ typedef struct
     int dni;
 }EPersona;
 
-/**
- * Obtiene el primer indice libre del array.
- * @param lista el array se pasa como parametro.
- * @return el primer indice disponible
- */
-int obtenerEspacioLibre(EPersona lista[]);
-/**
- * Obtiene el indice que coincide con el dni pasado por parametro.
- * @param lista el array se pasa como parametro.
- * @param dni el dni a ser buscado en el array.
- * @return el indice en donde se encuentra el elemento que coincide con el parametro dni
- */
 void agregarPersona(EPersona[], int);
 void borrarPersonaPorDni(EPersona[], int);
+/**
+ * Obtiene el índice del primer espacio libre del vector EPersona
+ * @param recibe el vector de la estructura
+ * @return Retorna el índice del primer espacio libre del vector, retorna -1 si no hay espacio disponible.
+ */
 int obtenerEspacioDisponible(EPersona[]);
+/**
+ * Obtiene el indice que coincide con el dni pasado por parametro.
+ * @param recibe el vector de la estructura
+ * @param recibe el número de DNI que se desea buscar
+ * @param recibe la longitud del vector
+ * @return Retorna el indice en donde se encuentra el elemento que coincide con el DNI, retorna -1 si no fue hallado.
+ */
 int buscarPersonaPorDni(EPersona[], int, int);
 void mostrarListaOrdenadaPorNombre(EPersona[], int);
 void mostrarGraficoDeBarras(EPersona[]);
 int estadoDeLaEstructuraPersona(EPersona[]);
+/**
+ * Pide que se ingrese la edad y la verifica. No sale de la función hasta que se haya ingresado un número válido.
+ * @return Retorna el número validado.
+ */
 int ingresarEdadDeLaPersona();
 /**
- * Obtiene el primer indice libre del array.
- * @param lista el array se pasa como parametro.
- * @return el primer indice disponible
+ * Pide que se ingrese el DNI y lo verifica. No sale de la función hasta que se haya ingresado un número válido.
+ * @return Retorna el número validado.
  */
 int ingresarDniDeLaPersona();
 

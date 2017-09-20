@@ -36,17 +36,6 @@ int i;
 
 int main()
 {
-
-    /*char dni[10];
-    for(i=0; i<10; i++)
-    {
-        printf("Ingrese el DNI de la persona: ");
-        fflush(stdin);
-        scanf("%s",&dni);
-
-        printf("\n-- %d --\n", atoi(dni));
-    }*/
-
     char seguir='s';
     int opcion=0;
 
@@ -62,8 +51,8 @@ int main()
     {
         printf("1- Agregar persona\n");
         printf("2- Borrar persona\n");
-        printf("3- Imprimir lista ordenada por  nombre\n");
-        printf("4- Imprimir grafico de edades\n");
+        printf("3- Imprimir lista ordenada por nombre\n");
+        printf("4- Imprimir gr%cfico de edades\n", 160);
         printf("5- Salir\n");
 
         scanf("%d",&opcion);
