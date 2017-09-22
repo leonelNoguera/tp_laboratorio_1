@@ -21,8 +21,8 @@ Ejemplo:
 * * *
 * * *
 * * *
-* * *
-<18 19-35 >35
+    *   *   *
+  <18 19-35 >35
 Gráfico para una estadística de 6 personas con edad menor a 18, 4 personas con edades entre
 19 y 35, y 5 personas con edades mayores a 35.*/
 #include <stdio.h>
@@ -38,6 +38,7 @@ int main()
 {
     char seguir='s';
     int opcion=0;
+    char opcionIngresada[10];
 
     EPersona personas[cantidadDePersonas];
 
@@ -53,26 +54,36 @@ int main()
         printf("2- Borrar persona\n");
         printf("3- Imprimir lista ordenada por nombre\n");
         printf("4- Imprimir gr%cfico de edades\n", 160);
-        printf("5- Salir\n");
+        printf("5- Salir\n\n");
 
-        scanf("%d",&opcion);
+        scanf("%s",&opcionIngresada);
+        opcion = atoi(opcionIngresada);
 
         switch(opcion)
         {
             case 1:
+                printf("\n");
                 agregarPersona(personas, cantidadDePersonas);
                 break;
             case 2:
+                printf("\n");
                 borrarPersonaPorDni(personas, cantidadDePersonas);
                 break;
             case 3:
+                printf("\n");
                 mostrarListaOrdenadaPorNombre(personas, cantidadDePersonas);
                 break;
             case 4:
-                mostrarGraficoDeBarras(personas);
+                printf("\n");
+                mostrarGraficoDeBarras(personas, cantidadDePersonas);
                 break;
             case 5:
                 seguir = 'n';
+                break;
+            default:
+                printf("    Error: La opci%cn no es v%clida.\n", 162, 160);
+                system("pause");
+                printf("\n");
                 break;
         }
     }

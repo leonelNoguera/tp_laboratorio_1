@@ -26,9 +26,10 @@ void borrarPersonaPorDni(EPersona[], int);
 /**
  * Obtiene el índice del primer espacio libre del vector EPersona.
  * @param Recibe el vector de la estructura.
+ * @param Recibe la longitud del vector.
  * @return Retorna el índice del primer espacio libre del vector, retorna -1 si no hay espacio disponible.
  */
-int obtenerEspacioDisponible(EPersona[]);
+int obtenerEspacioDisponible(EPersona[], int);
 /**
  * Obtiene el indice que coincide con el dni pasado por parametro.
  * @param Recibe el vector de la estructura.
@@ -37,9 +38,25 @@ int obtenerEspacioDisponible(EPersona[]);
  * @return Retorna el indice en donde se encuentra el elemento que coincide con el DNI, retorna -1 si no fue hallado.
  */
 int buscarPersonaPorDni(EPersona[], int, int);
+/**
+ * Utiliza printf para mostrar la lista de personas ordenada por nombre y alfabéticamente.
+ * @param Recibe el vector de la estructura.
+ * @param Recibe la longitud del vector.
+ */
 void mostrarListaOrdenadaPorNombre(EPersona[], int);
-void mostrarGraficoDeBarras(EPersona[]);
-int estadoDeLaEstructuraPersona(EPersona[]);
+/**
+ * Utiliza printf para mostrar un gráfico de barras de las personas clasificadas en rangos de edades, en este caso: <=18 19-35 >35.
+ * @param Recibe el vector de la estructura.
+ * @param Recibe la longitud del vector.
+ */
+void mostrarGraficoDeBarras(EPersona[], int);
+/**
+ * Examina el estado de la estructura recibida.
+ * @param Recibe el vector de la estructura.
+ * @param Recibe la longitud del vector.
+ * @return Retorna el número que corresponde al estado de la estructura. Es 0 si está vacía, 1 si hay por lo menos 1 elemento agregado y 2 si el vector está lleno.
+ */
+int estadoDeLaEstructuraPersona(EPersona[], int);
 /**
  * Pide que se ingrese la edad y la verifica. No sale de la función hasta que se haya ingresado un número válido.
  * @return Retorna el número validado.

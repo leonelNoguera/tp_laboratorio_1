@@ -33,3 +33,15 @@
 	"generadorDeDatos.h"
 	<stdlib.h>
 
+1506089491 source:d:\marcelonoguera\programacion1\tp_laboratorio_1-master\tp_2_cascara\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"funciones.c"
+
+1506084400 d:\marcelonoguera\programacion1\tp_laboratorio_1-master\tp_2_cascara\funciones.h
+
+1506085947 d:\marcelonoguera\programacion1\tp_laboratorio_1-master\tp_2_cascara\funciones.c
+	"funciones.h"
+

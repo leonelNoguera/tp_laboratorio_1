@@ -12,14 +12,14 @@ void agregarPersona(EPersona personas[], int cantidadDePersonas)
 
     int edad = ingresarEdadDeLaPersona();
     int dni = ingresarDniDeLaPersona();
-    if(estadoDeLaEstructuraPersona(personas) != 2)
+    if(estadoDeLaEstructuraPersona(personas, cantidadDePersonas) != 2)
     {
-        if(obtenerEspacioDisponible(personas) != -1)
+        if(obtenerEspacioDisponible(personas, cantidadDePersonas) != -1)
         {
             int indice;
             if(buscarPersonaPorDni(personas, dni, cantidadDePersonas) == -1)
             {
-                indice = obtenerEspacioDisponible(personas);
+                indice = obtenerEspacioDisponible(personas, cantidadDePersonas);
                 strcpy(personas[indice].nombre, nombre);
                 personas[indice].edad = edad;
                 personas[indice].dni = dni;
@@ -33,7 +33,7 @@ void agregarPersona(EPersona personas[], int cantidadDePersonas)
     }
     else
     {
-        if(estadoDeLaEstructuraPersona(personas) == 2)
+        if(estadoDeLaEstructuraPersona(personas, cantidadDePersonas) == 2)
         {
             printf("    Error: No hay espacios disponibles.\n");
         }
@@ -47,13 +47,13 @@ void agregarPersona(EPersona personas[], int cantidadDePersonas)
     }
 }
 
-int obtenerEspacioDisponible(EPersona personas[])
+int obtenerEspacioDisponible(EPersona personas[], int cantidadDePersonas)
 {
     int indiceDelEspacioDisponible = 0;
-    if(estadoDeLaEstructuraPersona(personas))
+    if(estadoDeLaEstructuraPersona(personas, cantidadDePersonas))
     {
         int i;
-        for(i=0; i<20; i++)
+        for(i=0; i<cantidadDePersonas; i++)
         {
             if(personas[i].estado == 0)
             {
@@ -73,7 +73,7 @@ int buscarPersonaPorDni(EPersona personas[], int dni, int cantidadDePersonas)
 {
     int resultado = -1;
     int i;
-    for(i=0; i<20; i++)
+    for(i=0; i<cantidadDePersonas; i++)
     {
         if(personas[i].dni == dni)
         {
@@ -102,19 +102,20 @@ void borrarPersonaPorDni(EPersona personas[], int cantidadDePersonas)
     {
         printf("    Error: No se encontr%c la persona.\n", 162);
     }
+    printf("\n");
 }
 
 void mostrarListaOrdenadaPorNombre(EPersona personas[], int cantidadDePersonas)
 {
-    if(estadoDeLaEstructuraPersona(personas))
+    if(estadoDeLaEstructuraPersona(personas, cantidadDePersonas))
     {
-        EPersona personasOrdenadasPorNombres[20] = {};
+        EPersona personasOrdenadasPorNombres[40] = {};
         EPersona personasAux = {};
 
         int i;
         int j;
 
-        for(i=0; i<20; i++)
+        for(i=0; i<cantidadDePersonas; i++)
         {
             if(personas[i].estado)
             {
@@ -127,9 +128,9 @@ void mostrarListaOrdenadaPorNombre(EPersona personas[], int cantidadDePersonas)
         }
 
 
-        for(j=0; j<20; j++)
+        for(j=0; j<cantidadDePersonas; j++)
         {
-            for(i=j; i<20; i++)
+            for(i=j; i<cantidadDePersonas; i++)
             {
                 if(personas[i].estado)
                 {
@@ -144,7 +145,7 @@ void mostrarListaOrdenadaPorNombre(EPersona personas[], int cantidadDePersonas)
         }
 
         printf(" | Nombre --- DNI --- Edad |\n");
-        for(i=0; i<20; i++)
+        for(i=0; i<cantidadDePersonas; i++)
         {
             if(personas[i].estado)
             {
@@ -156,11 +157,12 @@ void mostrarListaOrdenadaPorNombre(EPersona personas[], int cantidadDePersonas)
     {
         printf("    Error: La estructura de datos est%c vac%ca.\n", 160, 161);
     }
+    printf("\n");
 }
 
-void mostrarGraficoDeBarras(EPersona personas[])
+void mostrarGraficoDeBarras(EPersona personas[], int cantidadDePersonas)
 {
-    if(estadoDeLaEstructuraPersona(personas))
+    if(estadoDeLaEstructuraPersona(personas, cantidadDePersonas))
     {
         int cantidadEnIntervaloUno = 0;
         int cantidadEnIntervaloDos = 0;
@@ -169,15 +171,15 @@ void mostrarGraficoDeBarras(EPersona personas[])
 
         int i;
 
-        for(i=0; i<20; i++)
+        for(i=0; i<cantidadDePersonas; i++)
         {
             if(personas[i].estado)
             {
-                if(personas[i].edad < 18)
+                if(personas[i].edad <= 18)
                 {
                     cantidadEnIntervaloUno++;
                 }
-                if((personas[i].edad > 18) && (personas[i].edad < 36))
+                if((personas[i].edad > 18) && (personas[i].edad <= 35))
                 {
                     cantidadEnIntervaloDos++;
                 }
@@ -253,28 +255,29 @@ void mostrarGraficoDeBarras(EPersona personas[])
                 printf("     \n");
             }
         }
-        printf("-------------\n<18 19-35 >35\n");
+        printf("-------------\n<=18 19-35 >35\n");
     }
     else
     {
         printf("    Error: La estructura de datos est%c vac%ca.\n", 160, 161);
     }
+    printf("\n");
 }
 
-int estadoDeLaEstructuraPersona(EPersona personas[])
+int estadoDeLaEstructuraPersona(EPersona personas[], int cantidadDePersonas)
 {
     // 0 -- vacio , 1 -- alguno seteado, 2 -- lleno
     int estadoDeLaEstructura = 0;
     int contadorElementosSeteados = 0;
     int i;
-    for(i=0; i<20; i++)
+    for(i=0; i<cantidadDePersonas; i++)
     {
         if(personas[i].estado)
         {
             estadoDeLaEstructura = 1;
             contadorElementosSeteados++;
         }
-        if(contadorElementosSeteados == 20)
+        if(contadorElementosSeteados == cantidadDePersonas)
         {
             estadoDeLaEstructura = 2;
         }
@@ -332,5 +335,6 @@ int ingresarDniDeLaPersona()
             flag = 0;
         }
     }
+    printf("\n");
     return dni;
 }
