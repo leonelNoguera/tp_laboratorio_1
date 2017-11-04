@@ -1,0 +1,48 @@
+# depslib dependency file v1.0
+1509644691 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_3_Cascara/main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"funciones.c"
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"funciones.c"
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"funciones.c"
+
+1509655490 .c"
+
+1509644456 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_3_Cascara/funciones.h
+
+1509644493 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_3_Cascara/funciones.c
+	"funciones.h"
+	"funciones.h"
+	"funciones.h"
+
+1509721910 .h"
+
+1509655490 source:d:\marcelonoguera\programacionlaboratorioi\tp_3_cascara\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"funciones.c"
+
+1509721266 d:\marcelonoguera\programacionlaboratorioi\tp_3_cascara\funciones.h
+
+1509721910 d:\marcelonoguera\programacionlaboratorioi\tp_3_cascara\funciones.c
+	"funciones.h"
+
+1509831704 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_3_Cascara/main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"funciones.c"
+
+1509830861 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_3_Cascara/funciones.h
+
+1509831974 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_3_Cascara/funciones.c
+	"funciones.h"
+
