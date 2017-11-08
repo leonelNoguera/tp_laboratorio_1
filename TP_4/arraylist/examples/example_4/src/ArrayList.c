@@ -102,10 +102,16 @@ int al_deleteArrayList(ArrayList* this)
 {
     int returnAux = -1;
 
+    if(this != NULL)
+    {
+        free(this);
+        returnAux = 0;
+    }
+
     return returnAux;
 }
 
-/** \brief  Delete arrayList
+/** \brief  Return the length of the ArrayList
  * \param pList ArrayList* Pointer to arrayList
  * \return int Return length of array or (-1) if Error [pList is NULL pointer]
  *
@@ -113,6 +119,11 @@ int al_deleteArrayList(ArrayList* this)
 int al_len(ArrayList* this)
 {
     int returnAux = -1;
+
+    if(this != NULL)
+    {
+        returnAux = this->size;
+    }
 
     return returnAux;
 }
@@ -127,6 +138,14 @@ int al_len(ArrayList* this)
 void* al_get(ArrayList* this, int index)
 {
     void* returnAux = NULL;
+
+    if((this != NULL) && (index > -1) && (index < this->size))
+    {
+        if(this->pElements[index] != NULL)
+        {
+            returnAux = this->pElements[index];
+        }
+    }
 
     return returnAux;
 }
@@ -143,6 +162,23 @@ void* al_get(ArrayList* this, int index)
 int al_contains(ArrayList* this, void* pElement)
 {
     int returnAux = -1;
+
+    if((this != NULL) && (pElement != NULL))
+    {
+        returnAux = 0;
+
+        int i = 0;
+        while(this->size > 0)
+        {
+            if(&this->pElements[i] == &pElement)
+            {
+                returnAux = 1;
+                printf("This: %p\npElement: %p\n\n", &this->pElements[i], pElement);
+                break;
+            }
+            i++;
+        }
+    }
 
     return returnAux;
 }
@@ -176,10 +212,11 @@ int al_remove(ArrayList* this, int index)
 
     if((this != NULL) && (index > -1) && (index < this->size))
     {
-        this->pElements[index+1] = NULL;
+        this->pElements[index] = NULL;
         this->size--;
         returnAux = 0;
     }
+
     return returnAux;
 }
 
@@ -263,6 +300,15 @@ int al_indexOf(ArrayList* this, void* pElement)
 int al_isEmpty(ArrayList* this)
 {
     int returnAux = -1;
+
+    if(this != NULL)
+    {
+        returnAux = 1;
+        if(this->size)
+        {
+            returnAux = 0;
+        }
+    }
 
     return returnAux;
 }
@@ -360,10 +406,9 @@ int al_containsAll(ArrayList* this,ArrayList* this2)
     {
         if(this->size == this2->size)
         {
-            int i = 1;
+            int i = 0;
             while(this->size > 0)
             {
-                //printf("%s\n", &this->pElements[i]);
                 if(&this->pElements[i] == &this2->pElements[i])
                 {
                     returnAux = 1;
