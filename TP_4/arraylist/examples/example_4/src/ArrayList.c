@@ -166,15 +166,17 @@ int al_contains(ArrayList* this, void* pElement)
     if((this != NULL) && (pElement != NULL))
     {
         returnAux = 0;
-
-        int i = 0;
-        while(this->size > 0)
+        int i = 1;
+        printf("This: %p\npElement: %p\n\n", &(this->pElements[i]), pElement);
+        printf("This: %p\npElement: %p\n\n", (this->pElements[i]), pElement);
+        while(i <= this->size) // -------------------
         {
-            if(&this->pElements[i] == &pElement)
+
+            if(&(this->pElements[i]) == pElement)
             {
                 returnAux = 1;
-                printf("This: %p\npElement: %p\n\n", &this->pElements[i], pElement);
-                break;
+                //printf("This: %p\npElement: %p\n\n", &this->pElements[i], pElement);
+                i = this->size + 1;
             }
             i++;
         }
