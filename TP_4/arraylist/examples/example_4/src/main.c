@@ -28,23 +28,23 @@
 
 int main(void)
 {
-        //startTesting(1);
-        //startTesting(2);
-        //startTesting(3);
-        //startTesting(4);
-        //sstartTesting(5);
-        startTesting(6);
-        //startTesting(7);
-        //startTesting(8);
-        //startTesting(9);
-        /*startTesting(10);
-        startTesting(11);
-        startTesting(12);*/
-        //startTesting(13);
-        //startTesting(14);
-        //startTesting(15);
-        /*startTesting(16);
-        startTesting(17);*/
+    //startTesting(1); //al_newArrayList       -- listo
+    //startTesting(2); //al_add                -- listo
+    //startTesting(3); //al_deleteArrayList    -- listo
+    //startTesting(4); //al_len                -- listo
+    //startTesting(5); //al_get                -- listo
+    //startTesting(6); //al_contains           -- listo
+    //startTesting(7); //al_set                -- listo
+    //startTesting(8); //al_remove             -- listo
+    //startTesting(9); //al_clear              -- listo
+    //startTesting(10); //al_clone             -- listo
+    //startTesting(11); //al_push              -- no funciona
+    //startTesting(12); //al_indexOf           -- listo
+    //startTesting(13); //al_isEmpty           -- listo
+    //startTesting(14); //al_pop               -- no funciona
+    //startTesting(15); //al_subList           -- listo
+    //startTesting(16); //al_containsAll       -- listo
+    startTesting(17); //al_sort              -- listo
 
     return 0;
 }
