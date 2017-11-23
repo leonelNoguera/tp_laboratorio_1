@@ -212,8 +212,7 @@ int al_remove(ArrayList* this, int index)
 
     if((this != NULL) && (index > -1) && (index < this->size))
     {
-        this->pElements[index] = NULL;
-        this->size--;
+        contract(this, index);
         returnAux = 0;
     }
 
@@ -284,6 +283,23 @@ int al_push(ArrayList* this, int index, void* pElement)
     int returnAux = -1;
     /*si el indice es igual al size se utiliza add()*/
 
+    if((this != NULL) && (pElement != NULL) && (index >= 0) && (index <= this->size))
+    {
+        if(index == this->size)
+        {
+            if(!al_add(this, pElement))
+            {
+                returnAux = 0;
+            }
+        }
+        else
+        {
+            expand(this, index);
+            al_set(this, index, pElement);
+            returnAux = 0;
+        }
+    }
+
     return returnAux;
 }
 
@@ -347,7 +363,20 @@ int al_isEmpty(ArrayList* this)
  */
 void* al_pop(ArrayList* this,int index)
 {
+    /*Retorna un puntero al elemento que se encuentra en el índice especificado y luego lo elimina
+    de la lista. Verificando que el puntero pList sea distinto de NULL y que index sea positivo e
+    inferior al tamaño del array. Si la verificación falla la función retorna (NULL) y si tiene éxito
+    retorna el elemento.*/
     void* returnAux = NULL;
+
+    if((this != NULL) && (index >= 0) && (index < this->size))
+    {
+        returnAux = al_get(this, index);
+        if(returnAux != NULL)
+        {
+            al_remove(this, index);
+        }
+    }
 
     return returnAux;
 }
@@ -515,6 +544,44 @@ int resizeUp(ArrayList* this)
 int expand(ArrayList* this,int index)
 {
     int returnAux = -1;
+
+    if((this != NULL) && (index >= 0) && (index < this->size))
+    {
+        this->size++;
+        if(this->reservedSize == this->size)
+        {
+            if(!resizeUp(this))
+            {
+                int i;
+                for(i = (this->size - 1); i > index; i--)
+                {
+                    if(al_set(this, i, this->pElements[i-1]) != -1)
+                    {
+                        returnAux = 0;
+                    }
+                    else
+                    {
+                        returnAux = -1;
+                    }
+                }
+            }
+        }
+        else
+        {
+            int i;
+            for(i = (this->size - 1); i > index; i--)
+            {
+                if(al_set(this, i, this->pElements[i-1]) != -1)
+                {
+                    returnAux = 0;
+                }
+                else
+                {
+                    returnAux = -1;
+                }
+            }
+        }
+    }
 
     return returnAux;
 }

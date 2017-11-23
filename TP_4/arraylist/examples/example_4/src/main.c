@@ -23,9 +23,9 @@
 #include "../testing/inc/main_test.h"
 #include "../inc/ArrayList.h"
 #include "../inc/Employee.h"
+#include "funciones.c"
 
-
-void printArrayListEmployee(ArrayList* lista)
+/*void printArrayListEmployee(ArrayList* lista)
 {
   int i=0;
   for(i=0;i<lista->len(lista);i++)
@@ -35,10 +35,53 @@ void printArrayListEmployee(ArrayList* lista)
       printEmployee(pAux);
       //1) Nombre:JUAN2 Salario:233.22
   }
-}
+}*/
 
 int main(void)
 {
+    ArrayList* this;
+
+    char seguir='s';
+    int opcion=0;
+
+    while(seguir=='s')
+    {
+        printf("1- Nuevo ArraList\n");
+        printf("2- Agregar empleado\n");
+        //printf("2- Borrar empleado\n");
+        //printf("3- Modificar pelicula\n");
+        printf("4- Guardar en archivo.\n");
+        printf("5- Salir\n");
+        //printf("6- Mostrar peliculas.bin\n");
+
+        scanf("%d",&opcion);
+
+        switch(opcion)
+        {
+            case 1:
+                this = al_newArrayList();
+                break;
+            case 2:
+                agregarEmpleado(this);
+                break;
+            /*case 2:
+                borrarPelicula();
+                break;*/
+            /*case 3:
+                modificarPelicula();
+                break;*/
+            case 4:
+                guardarEmpleadosEnArchivo(this);
+                break;
+            case 5:
+                seguir = 'n';
+                break;
+            /*case 6:
+                mostrarPeliculas();
+                break;*/
+        }
+    }
+
     //startTesting(1); //al_newArrayList       -- listo
     //startTesting(2); //al_add                -- listo
     //startTesting(3); //al_deleteArrayList    -- listo
@@ -49,16 +92,17 @@ int main(void)
     //startTesting(8); //al_remove             -- listo
     //startTesting(9); //al_clear              -- listo
     //startTesting(10); //al_clone             -- listo
-    //startTesting(11); //al_push              -- no funciona
+    //startTesting(11); //al_push              -- listo
     //startTesting(12); //al_indexOf           -- listo
     //startTesting(13); //al_isEmpty           -- listo
-    //startTesting(14); //al_pop               -- no funciona
+    //startTesting(14); //al_pop               -- listo
     //startTesting(15); //al_subList           -- listo
     //startTesting(16); //al_containsAll       -- listo
     //startTesting(17); //al_sort              -- listo
 
+
     // Genero personas para usar en el ArrayList
-    Employee* p0 = newEmployee(14, "JUAN1" ,"LOPEZ", 133.22,5);
+    /*Employee* p0 = newEmployee(14, "JUAN1" ,"LOPEZ", 133.22,5);
     Employee* p1 = newEmployee(14, "JUAN2" ,"LOPEZ", 233.22,5);
     Employee* p2 = newEmployee(14, "JUAN3" ,"LOPEZ", 333.22,5);
     Employee* p3 = newEmployee(14, "JUAN4" ,"LOPEZ", 433.22,5);
@@ -185,6 +229,6 @@ int main(void)
     lista->deleteArrayList(lista);
     lista2->deleteArrayList(lista2);
 
-    system("PAUSE");
+    system("PAUSE");*/
     return 0;
 }
