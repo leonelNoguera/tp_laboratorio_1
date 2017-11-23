@@ -21,7 +21,14 @@ int compareEmployee(void* pEmployeeA,void* pEmployeeB)
 
 void printEmployee(Employee* p)
 {
-    printf("Nombre:%s Salario:%.2f\r\n",p->name,p->salary);
+    if(p != NULL)
+    {
+        printf("Nombre:%s Salario:%.2f\r\n",p->name,p->salary);
+    }
+    else
+    {
+        printf("    Error: p = NULL\n");
+    }
 }
 
 /** \brief Set this employee the values recived as parameters

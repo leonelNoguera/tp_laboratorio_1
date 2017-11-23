@@ -529,5 +529,22 @@ int contract(ArrayList* this,int index)
 {
     int returnAux = -1;
 
+    if((this != NULL) && (index >= 0) && (index < this->size))
+    {
+        int i;
+        for(i = index; i < (this->size - 1); i++)
+        {
+            if(al_set(this, i, this->pElements[i+1]) != -1)
+            {
+                returnAux = 0;
+            }
+            else
+            {
+                returnAux = -1;
+            }
+        }
+        this->size--;
+    }
+
     return returnAux;
 }
