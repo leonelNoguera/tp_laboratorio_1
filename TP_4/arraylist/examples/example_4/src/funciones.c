@@ -46,7 +46,8 @@ void borrarEmpleado(ArrayList* this)
 {
     if(this != NULL)
     {
-        if(this->len(this) > 0)
+        //Return (-1) if Error [pList is NULL pointer] - (0) if Not Empty - (1) if is Empty
+        if(!this->isEmpty(this))
         {
             mostrarEmpleados();
 
@@ -76,7 +77,7 @@ void modificarempleado(ArrayList* this)
 {
     if(this != NULL)
     {
-        if(this->len(this) > 0)
+        if(!this->isEmpty(this))
         {
             mostrarEmpleados();
 
@@ -144,7 +145,7 @@ void mostrarEmpleados(ArrayList* this)
 {
     if(this != NULL)
     {
-        if(this->len(this) > 0)
+        if(!this->isEmpty(this))
         {
             int i=0;
             for(i=0;i<this->len(this);i++)
@@ -272,19 +273,19 @@ void compararArrayList(ArrayList* this, ArrayList* this2)
 {
     if((this != NULL) && (this2 != NULL))
     {
-        if(this->al_containsAll(this, this2) == 1)
+        if(this->containsAll(this, this2) == 1)
         {
             printf("Son iguales.\n");
         }
         else
         {
-            if(!this->al_containsAll(this, this2))
+            if(!this->containsAll(this, this2))
             {
                 printf("No son iguales.\n");
             }
             else
             {
-                printf("    Error: No se pudo comparar.\n");    
+                printf("    Error: No se pudo comparar.\n");
             }
         }
     }
@@ -331,6 +332,35 @@ void insertarEmpleado(ArrayList* this)
     {
         printf("    Error: ArrayList = NULL.\n");
     }
+}
+
+Employee* quitarEmpleado(ArrayList* this)
+{
+    Employee* empleadoAux = NULL;
+
+    if(this != NULL)
+    {
+        mostrarEmpleados(this);
+
+        int index = pedirIndice();
+
+        empleadoAux = (Employee*) this->pop(this, index);
+
+        if(empleadoAux == NULL)
+        {
+            printf("    Error: No se pudo quitar.\n");
+        }
+        else
+        {
+            printf("Quitado.\n");
+        }
+    }
+    else
+    {
+        printf("    Error: ArrayList = NULL.\n");
+    }
+
+    return empleadoAux;
 }
 
 /*int buscarempleadoPorapellido(char apellido[])

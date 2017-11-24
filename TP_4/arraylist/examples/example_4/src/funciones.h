@@ -35,6 +35,7 @@ void borrarArrayList(ArrayList* this);
 ArrayList* clonarArrayList(ArrayList* this);
 void insertarEmpleado(ArrayList* this);
 int pedirIndice();
+Employee* quitarEmpleado(ArrayList* this);
 /**
  * \brief Pide los datos necesarios para guardar una pelicula en el archivo binario.
  * \param this

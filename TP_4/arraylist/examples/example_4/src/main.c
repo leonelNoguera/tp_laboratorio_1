@@ -41,6 +41,7 @@ int main(void)
 {
     ArrayList* this;
     ArrayList* this2;
+    Employee* empleado;
 
     char seguir='s';
     int opcion=0;
@@ -57,6 +58,7 @@ int main(void)
         printf("8- Ordenar empleados.\n");
         printf("9- Clonar ArraList\n");
         printf("10- Comparar los dos ArraList\n");
+        printf("11- Quitar empleado.\n");
         printf("15- Salir.\n");
 
         scanf("%d",&opcion);
@@ -93,6 +95,9 @@ int main(void)
             case 10:
                 compararArrayList(this, this2);
                 break;
+            case 11:
+                empleado = quitarEmpleado(this);
+                break;
             case 15:
                 seguir = 'n';
                 break;
@@ -111,7 +116,7 @@ int main(void)
     //startTesting(10); //al_clone             -- listo -- usada
     //startTesting(11); //al_push              -- listo -- usada
     //startTesting(12); //al_indexOf           -- listo
-    //startTesting(13); //al_isEmpty           -- listo
+    //startTesting(13); //al_isEmpty           -- listo -- usada
     //startTesting(14); //al_pop               -- listo
     //startTesting(15); //al_subList           -- listo
     //startTesting(16); //al_containsAll       -- listo -- usada
