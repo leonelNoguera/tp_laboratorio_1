@@ -20,6 +20,22 @@ int pedirSector();
 float pedirSalario();
 
 /**
+ * \brief Pide que se ingrese el puntaje y lo verifica. No sale de la función hasta que se haya ingresado un número válido.
+ * \return Retorna el número validado.
+ */
+int pedirOrden();
+/**
+ * \brief Pide que se ingrese el puntaje y lo verifica. No sale de la función hasta que se haya ingresado un número válido.
+ * \return Retorna el número validado.
+ */
+int ingresarIndexEmpleado();
+
+void borrarArrayList(ArrayList* this);
+void borrarArrayList(ArrayList* this);
+ArrayList* clonarArrayList(ArrayList* this);
+void insertarEmpleado(ArrayList* this);
+int pedirIndice();
+/**
  * \brief Pide los datos necesarios para guardar una pelicula en el archivo binario.
  * \param this
  */

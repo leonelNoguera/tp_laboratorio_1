@@ -4,12 +4,16 @@
 	<stdio.h>
 	<stdlib.h>
 
+1460486298 
+
 1460469917 /home/mauro/Documentos/workspace_c/utest/lib/utest.h
 
 1460486212 source:/home/mauro/Documentos/workspace_c/utest/examples/example_1/src/main.c
 	<stdio.h>
 	<stdlib.h>
 	"../testing/inc/main_test.h"
+
+1461339438 g/inc/main_test.h"
 
 1460469855 source:/home/mauro/Documentos/workspace_c/utest/examples/example_1/lib/utest.c
 	"utest.h"
@@ -49,6 +53,8 @@
 	"../inc/firstTest.h"
 	"../inc/secondTest.h"
 
+1460582017 condTest.h"
+
 1460485472 /home/mauro/Documentos/workspace_c/utest/examples/example_1/testing/inc/firstTest.h
 
 1460485519 /home/mauro/Documentos/workspace_c/utest/examples/example_1/testing/inc/secondTest.h
@@ -67,6 +73,8 @@
 	<stdio.h>
 	<stdlib.h>
 	"../../inc/array.h"
+
+1461588197 /array.h"
 
 1460577103 source:/home/mauro/Documentos/workspace_c/utest/examples/example_2/testing/src/main_test.c
 	<utest.h>
@@ -96,6 +104,8 @@
 	<string.h>
 	"../testing/inc/main_test.h"
 	"../inc/array.h"
+
+1463408851 ray.h"
 
 1460484671 /home/mauro/Documentos/workspace_c/utest/examples/example_2/testing/inc/main_test.h
 
@@ -166,6 +176,8 @@
 	"../inc/thirdTest.h"
 	"../inc/fourthTest.h"
 	"../inc/fifthTest.h"
+
+1461588197 fthTest.h"
 
 1461359121 d:\mauriciodavila\utest\examples\example_3\testing\inc\firsttest.h
 
@@ -491,6 +503,8 @@
 	<string.h>
 	"../inc/ArrayList.h"
 
+1511441244 rayList.h"
+
 1461614020 /home/mauro/Documentos/workspace_c/utest/examples/example_4/inc/ArrayList.h
 
 1461613743 source:/home/mauro/Documentos/workspace_c/utest/examples/example_4/src/main.c
@@ -520,6 +534,8 @@
 	"../../inc/ArrayList.h"
 	"../../inc/Employee.h"
 
+1463532074 /Employee.h"
+
 1463087789 d:\mauriciodavila\arraylist\examples\example_4\inc\array.h
 
 1463087789 source:d:\mauriciodavila\arraylist\examples\example_4\testing\src\firsttest.c
@@ -528,6 +544,8 @@
 	<stdlib.h>
 	<string.h>
 	"../../inc/ArrayList.h"
+
+1463532074 /ArrayList.h"
 
 1463087789 source:d:\mauriciodavila\arraylist\examples\example_4\testing\src\fourthtest.c
 	<utest.h>
@@ -557,6 +575,8 @@
 	"../inc/thirteenthTest.h"
 	"../inc/fourteenthTest.h"
 	"../inc/fifteenthTest.h"
+
+1463425739 fteenthTest.h"
 
 1463087789 d:\mauriciodavila\arraylist\examples\example_4\testing\inc\firsttest.h
 
@@ -604,6 +624,8 @@
 	<stdlib.h>
 	<string.h>
 	"../inc/Employee.h"
+
+1511450964 ployee.h"
 
 1463087789 d:\mauriciodavila\arraylist\examples\example_4\inc\employee.h
 
@@ -1082,6 +1104,8 @@
 	"../inc/fifteenthTest.h"
 	"../inc/sixteenthTest.h"
 	"../inc/seventeenthTest.h"
+
+1463532074 venteenthTest.h"
 
 1463432010 d:\mauricio\arraylist\examples\example_4\testing\inc\firsttest.h
 
@@ -2241,6 +2265,8 @@
 	"../inc/Employee.h"
 	"funciones.c"
 
+1511450974 .c"
+
 1463532074 d:\marcelonoguera\programacionlaboratorioi\tp_4\arraylist\examples\example_4\testing\inc\main_test.h
 
 1511450964 d:\marcelonoguera\programacionlaboratorioi\tp_4\arraylist\examples\example_4\src\funciones.c
@@ -2248,4 +2274,237 @@
 	"../inc/Employee.h"
 
 1511450956 d:\marcelonoguera\programacionlaboratorioi\tp_4\arraylist\examples\example_4\src\funciones.h
+
+1463521274 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/utest.c
+	"utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/utest.h
+
+1463521274 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/eighthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/ArrayList.h"
+	"../../inc/Employee.h"
+
+1496883878 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/inc/ArrayList.h
+
+1511434766 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/inc/Employee.h
+
+1465421600 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/eleventhTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/ArrayList.h"
+	"../../inc/Employee.h"
+
+1465427902 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/fifteenthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/ArrayList.h"
+	"../../inc/Employee.h"
+
+1463521274 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/fifthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/ArrayList.h"
+	"../../inc/Employee.h"
+
+1463521274 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/firstTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/ArrayList.h"
+
+1463521274 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/fourteenthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/ArrayList.h"
+	"../../inc/Employee.h"
+
+1463521274 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/fourthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/ArrayList.h"
+	"../../inc/Employee.h"
+
+1463521274 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/main_test.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	"../inc/firstTest.h"
+	"../inc/secondTest.h"
+	"../inc/thirdTest.h"
+	"../inc/fourthTest.h"
+	"../inc/fifthTest.h"
+	"../inc/sixthTest.h"
+	"../inc/seventhTest.h"
+	"../inc/eighthTest.h"
+	"../inc/ninthTest.h"
+	"../inc/tenthTest.h"
+	"../inc/eleventhTest.h"
+	"../inc/twelfthTest.h"
+	"../inc/thirteenthTest.h"
+	"../inc/fourteenthTest.h"
+	"../inc/fifteenthTest.h"
+	"../inc/sixteenthTest.h"
+	"../inc/seventeenthTest.h"
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/firstTest.h
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/secondTest.h
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/thirdTest.h
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/fourthTest.h
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/fifthTest.h
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/sixthTest.h
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/seventhTest.h
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/eighthTest.h
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/ninthTest.h
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/tenthTest.h
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/eleventhTest.h
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/twelfthTest.h
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/thirteenthTest.h
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/fourteenthTest.h
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/fifteenthTest.h
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/sixteenthTest.h
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/seventeenthTest.h
+
+1463521274 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/ninthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/ArrayList.h"
+	"../../inc/Employee.h"
+
+1463521274 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/secondTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/ArrayList.h"
+	"../../inc/Employee.h"
+
+1463521274 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/seventeenthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/ArrayList.h"
+	"../../inc/Employee.h"
+
+1463521274 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/seventhTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/ArrayList.h"
+	"../../inc/Employee.h"
+
+1465517092 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/sixteenthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/ArrayList.h"
+	"../../inc/Employee.h"
+
+1463521274 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/sixthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/ArrayList.h"
+	"../../inc/Employee.h"
+
+1463521274 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/tenthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/ArrayList.h"
+	"../../inc/Employee.h"
+
+1463521274 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/thirdTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/ArrayList.h"
+	"../../inc/Employee.h"
+
+1463521274 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/thirteenthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/ArrayList.h"
+	"../../inc/Employee.h"
+
+1463521274 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/src/twelfthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/ArrayList.h"
+	"../../inc/Employee.h"
+
+1511515342 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/src/ArrayList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/ArrayList.h"
+
+1511484123 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/src/Employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/Employee.h"
+
+1511514987 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/src/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../testing/inc/main_test.h"
+	"../inc/ArrayList.h"
+	"../inc/Employee.h"
+	"funciones.c"
+
+1463521274 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/testing/inc/main_test.h
+
+1511515607 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/src/funciones.c
+	"funciones.h"
+	"../inc/Employee.h"
+	<string.h>
+
+1511515185 /home/leonel/codetools/utnFra/programacionLaboratorioI/TP_4/arraylist/examples/example_4/src/funciones.h
 

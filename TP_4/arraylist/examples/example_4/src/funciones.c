@@ -3,6 +3,7 @@ Autor: Marcelo Leonel Noguera
 08/09/2017*/
 #include "funciones.h"
 #include "../inc/Employee.h"
+#include <string.h>
 
 void agregarEmpleado(ArrayList* this)
 {
@@ -18,10 +19,51 @@ void agregarEmpleado(ArrayList* this)
 
         Employee* empleado = newEmployee(0, nombre, apellido, salario, sector);
 
-        if(al_add(this, empleado))
+        if((this->contains(this, empleado) == 0) || (this->contains(this, empleado) == -1))
         {
-            //guardarEmpleadosEnArchivo(empleado->lastName, empleado->name, empleado->salary, empleado->sector);
-            printf("    Error: No se guardo el empleado.\n");
+            if(al_add(this, empleado))
+            {
+                printf("    Error: No se guardo el empleado.\n");
+            }
+            else
+            {
+                printf("Guardado.\n");
+            }
+        }
+        else
+        {
+            printf("    Error: El empleado ya esta registrado.\n");
+        }
+
+    }
+    else
+    {
+        printf("    Error: ArrayList = NULL.\n");
+    }
+}
+
+void borrarEmpleado(ArrayList* this)
+{
+    if(this != NULL)
+    {
+        if(this->len(this) > 0)
+        {
+            mostrarEmpleados();
+
+            int index = ingresarIndexEmpleado();
+
+            if(!this->remove(this, index))
+            {
+                printf("Eliminado.\n");
+            }
+            else
+            {
+                printf("    Error: No se pudo eliminar.\n");
+            }
+        }
+        else
+        {
+            printf("    Error: No hay empleados.\n");
         }
     }
     else
@@ -30,164 +72,61 @@ void agregarEmpleado(ArrayList* this)
     }
 }
 
-/*void borrarempleado()
+void modificarempleado(ArrayList* this)
 {
-    FILE * pArchivo;
-    FILE * pArchivoAux;
-    EMovie empleado;
-    int contador = 0;
-    int encontro = 0;
-
-    mostrarempleados();
-
-    pArchivo = fopen("empleados.bin","rb");
-    pArchivoAux = fopen("empleadosAux.bin","wb");
-
-    if((pArchivo != NULL) || (pArchivoAux != NULL))
+    if(this != NULL)
     {
-        int id = ingresarIdempleado();
-        while(fread(&empleado,sizeof(EMovie),1,pArchivo))
+        if(this->len(this) > 0)
         {
-            if(contador == id)
+            mostrarEmpleados();
+
+            int index = ingresarIndexEmpleado();
+
+            char apellido[40];
+            char nombre[20];
+
+            pedirApellido(apellido);
+            pedirNombre(nombre);
+            float salario = pedirSalario();
+            int sector = pedirSector();
+
+            Employee* empleado = newEmployee(0, nombre, apellido, salario, sector);
+
+            if(!this->set(this, index, empleado))
             {
-                encontro = 1;
+                printf("Modificado.\n");
             }
             else
             {
-                fwrite(&empleado,sizeof(EMovie),1,pArchivoAux);
-            }
-            contador++;
-        }
-        if(!encontro)
-        {
-            printf("    Error: No se encuentra ese ID.\n");
-        }
-        else
-        {
-            printf("Eliminado.\n");
-        }
-        fclose(pArchivo);
-        fclose(pArchivoAux);
-        if((pArchivo != NULL) || (pArchivoAux != NULL))
-        {
-            pArchivo = fopen("empleados.bin","wb");
-            pArchivoAux = fopen("empleadosAux.bin","rb");
-            while(fread(&empleado,sizeof(EMovie),1,pArchivoAux))
-            {
-                fwrite(&empleado,sizeof(EMovie),1,pArchivo);
+                printf("    Error: No se pudo modificar.\n");
             }
         }
         else
         {
-            printf("    Error: No se pudo abrir el archivo.\n");
+            printf("    Error: No hay empleados.\n");
         }
     }
     else
     {
-        printf("    Error: No se pudo abrir el archivo.\n");
+        printf("    Error: ArrayList = NULL.\n");
     }
-    fclose(pArchivo);
-    fclose(pArchivoAux);
 }
 
-void modificarempleado()
+int ingresarIndexEmpleado()
 {
-    FILE * pArchivo;
-    FILE * pArchivoAux;
-    EMovie empleado;
-    int contador = 0;
-    int encontro = 0;
-
-    char apellido[40];
-    char nombre[20];
-    char descripcion[200];
-    char linkImagen[200];
-
-    mostrarempleados();
-
-    pArchivo = fopen("empleados.bin","rb");
-    pArchivoAux = fopen("empleadosAux.bin","wb");
-
-    if((pArchivo != NULL) || (pArchivoAux != NULL))
-    {
-        int id = ingresarIdempleado();
-        while(fread(&empleado,sizeof(EMovie),1,pArchivo))
-        {
-            if(contador == id)
-            {
-                pedirApellido(apellido);
-
-                if((buscarempleadoPorapellido(apellido) == -1) || (buscarempleadoPorapellido(apellido) == id))
-                {
-                    pedirNombre(nombre);
-                    pedirDescripcion(descripcion);
-                    pedirLink(linkImagen);
-
-                    float salario = pedirSalario();
-                    int sector = pedirsector();
-
-                    fwrite(&empleado,sizeof(EMovie),1,pArchivoAux);
-
-                    printf("Modificado.\n");
-                }
-                else
-                {
-                    printf("    Error: Ya hay una empleado con ese apellido\n");
-                }
-                encontro = 1;
-            }
-            else
-            {
-                fwrite(&empleado,sizeof(EMovie),1,pArchivoAux);
-            }
-            contador++;
-        }
-        if(!encontro)
-        {
-            printf("    Error: No se encuentra ese ID.\n");
-        }
-        fclose(pArchivo);
-        fclose(pArchivoAux);
-
-        pArchivo = fopen("empleados.bin","wb");
-        pArchivoAux = fopen("empleadosAux.bin","rb");
-
-        if((pArchivo != NULL) || (pArchivoAux != NULL))
-        {
-            while(fread(&empleado,sizeof(EMovie),1,pArchivoAux))
-            {
-                fwrite(&empleado,sizeof(EMovie),1,pArchivo);
-            }
-        }
-        else
-        {
-            printf("    Error: No se pudo abrir el archivo.\n");
-        }
-    }
-    else
-    {
-        printf("    Error: No se pudo abrir el archivo.\n");
-    }
-
-    fclose(pArchivo);
-    fclose(pArchivoAux);
-}
-
-int ingresarIdempleado()
-{
-    int id;
-    char idIngresado[10];
+    int index;
+    char indexIngresado[10];
     int flag = 0;
 
     while(!flag)
     {
-        printf("Ingrese el ID de la empleado: ");
+        printf("Ingrese el index de la empleado: ");
         //fflush(stdin);
-        scanf("%s",&idIngresado);
+        scanf("%s",&indexIngresado);
 
-        id = atoi(idIngresado);
+        index = atoi(indexIngresado);
 
-        if(!(id < 0))
+        if(!(index < 0))
         {
             flag = 1;
         }
@@ -198,35 +137,34 @@ int ingresarIdempleado()
         }
     }
     printf("\n");
-    return id;
+    return index;
 }
 
-void mostrarempleados()
+void mostrarEmpleados(ArrayList* this)
 {
-    EMovie empleado;
-    int id = 0;
-    FILE * pArchivo;
-    int flag = 0;
-    pArchivo = fopen("empleados.bin","rb");
-
-    if(pArchivo != NULL)
+    if(this != NULL)
     {
-        while(fread(&empleado,sizeof(EMovie),1,pArchivo))
+        if(this->len(this) > 0)
         {
-            if(!flag)
+            int i=0;
+            for(i=0;i<this->len(this);i++)
             {
-                printf(" | ID --- NOMBRE --- PRECIO --- CANTIDAD VENDIDA --- STOCK --- NOMBRE USUARIO|\n");
+                Employee* pAux = this->get(this,i);
+                //printf("----Nombre:%s Salario:%.2f\r\n",pAux->name,pAux->salary);
+                printf("%d) ",i);
+                printEmployee(pAux);
             }
-            printf(" | %d\t - %s\t - %s\t - %s\t - %s\t - %d\t - %d\n", id, empleado.apellido, empleado.nombre, empleado.descripcion, empleado.linkImagen, empleado.salario, empleado.sector);
-            flag = 1;
+        }
+        else
+        {
+            printf("    Error: No hay empleados.\n");
         }
     }
     else
     {
-        printf("    Error: No se pudo abrir el archivo.\n");
+        printf("    Error: ArrayList = NULL.\n");
     }
-    fclose(pArchivo);
-}*/
+}
 
 void guardarEmpleadosEnArchivo(ArrayList* this)
 {
@@ -235,7 +173,7 @@ void guardarEmpleadosEnArchivo(ArrayList* this)
     FILE * pArchivo;
 
     Employee* empleado;
-    pArchivo = fopen("empleados.bin","ab");
+    pArchivo = fopen("empleados.bin","wb");
     if(pArchivo != NULL)
     {
         int i;
@@ -253,69 +191,149 @@ void guardarEmpleadosEnArchivo(ArrayList* this)
     fclose(pArchivo);
 }
 
-/*void addMovieToWeb(EMovie empleado)
+void borrarArrayList(ArrayList* this)
 {
-    printf("El link:\n%s\n", empleado.linkImagen);
-    FILE * pArchivoWeb;
-    pArchivoWeb = fopen("template/index.html","a");
-    if(pArchivoWeb != NULL)
+    if(this != NULL)
     {
-        fprintf(pArchivoWeb, "\t\t\t<article class=\'col-md-4 article-intro\'>\n\t\t\t\t<a href=\'#\'>\n\t\t\t\t\t<img class=\'img-responsive img-rounded\' src=\'%s\' alt=\'\'>\n\t\t\t\t</a>\n\t\t\t\t<h3>\n\t\t\t\t\t<a href=\'#\'>%s</a>\n\t\t\t\t</h3>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>%s</li>\n\t\t\t\t\t<li>salario: %d</li>\n\t\t\t\t\t<li>Duración: %d</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>%s</p>\n\t\t\t</article>\n", empleado.linkImagen, empleado.apellido, empleado.nombre, empleado.salario, empleado.sector, empleado.descripcion);
-    }
-    else
-    {
-        printf("    Error: No se pudo abrir el archivo.\n");
-    }
-    fclose(pArchivoWeb);
-}
-
-void generarWeb()
-{
-    FILE * pArchivo;
-    FILE * pArchivoWeb;
-    EMovie empleado;
-
-    pArchivoWeb = fopen("template/index.html","w");
-
-    if(pArchivoWeb != NULL)
-    {
-        fprintf(pArchivoWeb, "<!DOCTYPE html>\n<html lang=\'en\'>\n<head>\n\t<meta charset=\'utf-8\'>\t<meta http-equiv=\'X-UA-Compatible\' content=\'IE=edge\'>\t<meta name=\'viewport\' content=\'width=device-width, initial-scale=1\'>\n\t<title>Lista empleados</title>\n\t<link href=\'css/bootstrap.min.css\' rel=\'stylesheet\'>\n\t<link href=\'css/custom.css\' rel=\'stylesheet\'>\n</head>\n<body>\n\t<div class=\'container\'>\n\t\t<div class=\'row\'>\n");
-    }
-    else
-    {
-        printf("    Error: No se pudo abrir el archivo.\n");
-    }
-    fclose(pArchivoWeb);
-
-    // agregando empleados
-    pArchivo = fopen("empleados.bin","rb");
-
-    if(pArchivo != NULL)
-    {
-        while(fread(&empleado,sizeof(EMovie),1,pArchivo))
+        if(!this->deleteArrayList(this))
         {
-            addMovieToWeb(empleado);
+            printf("Eliminado.\n");
+        }
+        else
+        {
+            printf("    Error: No se pudo eliminar.\n");
         }
     }
     else
     {
-        printf("    Error: No se pudo abrir el archivo.\n");
+        printf("    Error: ArrayList = NULL.\n");
     }
-    fclose(pArchivo);
+}
 
-    pArchivoWeb = fopen("template/index.html","a");
-    if(pArchivo != NULL)
+void borrarEmpleados(ArrayList* this)
+{
+    if(this != NULL)
     {
-        fprintf(pArchivoWeb, "\t\t</div>\n\t</div>\n\t<script src=\'js/jquery-1.11.3.min.js\'></script>\n\t<script src=\'js/bootstrap.min.js\'></script>\n\t<script src=\'js/ie10-viewport-bug-workaround.js\'></script>\n\t<script src=\'js/holder.min.js\'></script>\n</body>\n</html>");
+        if(!this->clear(this))
+        {
+            printf("Eliminados.\n");
+        }
+        else
+        {
+            printf("    Error: No se pudo eliminar.\n");
+        }
     }
     else
     {
-        printf("    Error: No se pudo abrir el archivo.\n");
+        printf("    Error: ArrayList = NULL.\n");
     }
-    fclose(pArchivoWeb);
 }
 
-int buscarempleadoPorapellido(char apellido[])
+void ordenarEmpleados(ArrayList* this)
+{
+    if(this != NULL)
+    {
+        int orden = pedirOrden();
+        if(!this->sort(this, compareEmployee, orden))
+        {
+            printf("Ordenados.\n");
+        }
+        else
+        {
+            printf("    Error: No se pudo ordenar.\n");
+        }
+    }
+    else
+    {
+        printf("    Error: ArrayList = NULL.\n");
+    }
+}
+
+ArrayList* clonarArrayList(ArrayList* this)
+{
+    if(this != NULL)
+    {
+        if(this->clone(this) != NULL)
+        {
+            printf("Clonado.\n");
+        }
+        else
+        {
+            printf("    Error: No se pudo clonar.\n");
+        }
+    }
+    else
+    {
+        printf("    Error: ArrayList = NULL.\n");
+    }
+}
+
+void compararArrayList(ArrayList* this, ArrayList* this2)
+{
+    if((this != NULL) && (this2 != NULL))
+    {
+        if(this->al_containsAll(this, this2) == 1)
+        {
+            printf("Son iguales.\n");
+        }
+        else
+        {
+            if(!this->al_containsAll(this, this2))
+            {
+                printf("No son iguales.\n");
+            }
+            else
+            {
+                printf("    Error: No se pudo comparar.\n");    
+            }
+        }
+    }
+    else
+    {
+        printf("    Error: ArrayList = NULL.\n");
+    }
+}
+
+void insertarEmpleado(ArrayList* this)
+{
+    if(this != NULL)
+    {
+        char apellido[40];
+        char nombre[20];
+
+        pedirApellido(apellido);
+        pedirNombre(nombre);
+        float salario = pedirSalario();
+        int sector = pedirSector();
+
+        int index = pedirIndice();
+
+        Employee* empleado = newEmployee(0, nombre, apellido, salario, sector);
+
+        if((this->contains(this, empleado) == 0) || (this->contains(this, empleado) == -1))
+        {
+            if(!this->push(this, index, empleado))
+            {
+                printf("    Error: No se guardo el empleado.\n");
+            }
+            else
+            {
+                printf("Guardado.\n");
+            }
+        }
+        else
+        {
+            printf("    Error: El empleado ya esta registrado.\n");
+        }
+
+    }
+    else
+    {
+        printf("    Error: ArrayList = NULL.\n");
+    }
+}
+
+/*int buscarempleadoPorapellido(char apellido[])
 {
     int resultado = -1;
     int id = 0;
@@ -355,17 +373,6 @@ float pedirSalario()
         printf("Ingrese el salario del empleado: ");
         fflush(stdin);
         scanf("%f",&salario);
-        //salario = atof(salarioIngresado);
-
-        /*if(!(salario < 0.0))
-        {
-            flag = 1;
-        }
-        else
-        {
-            printf("    Error: N%cmero no v%clido.\n", 163, 160);
-            flag = 0;
-        }*/
         flag = 1;
     }
     return salario;
@@ -395,6 +402,70 @@ int pedirSector()
         }
     }
     return sector;
+}
+
+int pedirOrden()
+{
+    int orden;
+    char ordenIngresado[4];
+    int flag = 0;
+
+    while(!flag)
+    {
+        printf("Ingrese el orden (0 - 1): ");
+        fflush(stdin);
+        scanf("%s",&ordenIngresado);
+        orden = atoi(ordenIngresado);
+
+        if(orden > 0)
+        {
+            flag = 1;
+        }
+        else
+        {
+            if(!(strcmp(ordenIngresado, "0")))
+            {
+                flag = 1;
+            }
+            else
+            {
+                printf("    Error: N%cmero no v%clido.\n", 163, 160);
+            }
+        }
+    }
+    return orden;
+}
+
+int pedirIndice()
+{
+    int indice;
+    char indiceIngresado[4];
+    int flag = 0;
+
+    while(!flag)
+    {
+        printf("Ingrese el indice (0 - 1): ");
+        fflush(stdin);
+        scanf("%s",&indiceIngresado);
+        indice = atoi(indiceIngresado);
+
+        if(indice > 0)
+        {
+            flag = 1;
+        }
+        else
+        {
+            if(!(strcmp(indiceIngresado, "0")))
+            {
+                flag = 1;
+            }
+            else
+            {
+                printf("    Error: N%cmero no v%clido.\n", 163, 160);
+            }
+        }
+    }
+    return indice;
 }
 
 void pedirApellido(char apellido[])

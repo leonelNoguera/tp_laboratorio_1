@@ -5,7 +5,6 @@
 
 int compareEmployee(void* pEmployeeA,void* pEmployeeB)
 {
-
     if(((Employee*)pEmployeeA)->salary > ((Employee*)pEmployeeB)->salary)
     {
         return 1;
@@ -15,8 +14,6 @@ int compareEmployee(void* pEmployeeA,void* pEmployeeB)
         return -1;
     }
     return 0;
-
-
 }
 
 void printEmployee(Employee* p)

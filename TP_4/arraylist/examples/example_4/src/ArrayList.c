@@ -55,7 +55,6 @@ ArrayList* al_newArrayList(void)
             free(this);
         }
     }
-
     return returnAux;
 }
 
@@ -105,6 +104,7 @@ int al_deleteArrayList(ArrayList* this)
     if(this != NULL)
     {
         free(this);
+        this = NULL;
         returnAux = 0;
     }
 
@@ -420,9 +420,6 @@ ArrayList* al_subList(ArrayList* this,int from,int to)
 
     return returnAux;
 }
-
-
-
 
 
 /** \brief Returns true if pList list contains all of the elements of pList2

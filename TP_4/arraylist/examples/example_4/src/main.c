@@ -40,6 +40,7 @@
 int main(void)
 {
     ArrayList* this;
+    ArrayList* this2;
 
     char seguir='s';
     int opcion=0;
@@ -47,12 +48,16 @@ int main(void)
     while(seguir=='s')
     {
         printf("1- Nuevo ArraList\n");
-        printf("2- Agregar empleado\n");
-        //printf("2- Borrar empleado\n");
-        //printf("3- Modificar pelicula\n");
+        printf("2- Agregar empleado.\n");
+        printf("3- Borrar empleado.\n");
         printf("4- Guardar en archivo.\n");
-        printf("5- Salir\n");
-        //printf("6- Mostrar peliculas.bin\n");
+        printf("5- Mostrar empleados.\n");
+        printf("6- Eliminar ArraList.\n");
+        printf("7- Eliminar empleados.\n");
+        printf("8- Ordenar empleados.\n");
+        printf("9- Clonar ArraList\n");
+        printf("10- Comparar los dos ArraList\n");
+        printf("15- Salir.\n");
 
         scanf("%d",&opcion);
 
@@ -64,41 +69,53 @@ int main(void)
             case 2:
                 agregarEmpleado(this);
                 break;
-            /*case 2:
-                borrarPelicula();
-                break;*/
-            /*case 3:
-                modificarPelicula();
-                break;*/
+            case 3:
+                borrarEmpleado(this);
+                break;
             case 4:
                 guardarEmpleadosEnArchivo(this);
                 break;
             case 5:
+                mostrarEmpleados(this);
+                break;
+            case 6:
+                borrarArrayList(this);
+                break;
+            case 7:
+                borrarEmpleados(this);
+                break;
+            case 8:
+                ordenarEmpleados(this);
+                break;
+            case 9:
+                this2 = clonarArrayList(this);
+                break;
+            case 10:
+                compararArrayList(this, this2);
+                break;
+            case 15:
                 seguir = 'n';
                 break;
-            /*case 6:
-                mostrarPeliculas();
-                break;*/
         }
     }
 
-    //startTesting(1); //al_newArrayList       -- listo
-    //startTesting(2); //al_add                -- listo
-    //startTesting(3); //al_deleteArrayList    -- listo
-    //startTesting(4); //al_len                -- listo
-    //startTesting(5); //al_get                -- listo
-    //startTesting(6); //al_contains           -- listo
-    //startTesting(7); //al_set                -- listo
-    //startTesting(8); //al_remove             -- listo
-    //startTesting(9); //al_clear              -- listo
-    //startTesting(10); //al_clone             -- listo
-    //startTesting(11); //al_push              -- listo
+    //startTesting(1); //al_newArrayList       -- listo -- usada
+    //startTesting(2); //al_add                -- listo -- usada
+    //startTesting(3); //al_deleteArrayList    -- listo -- usada
+    //startTesting(4); //al_len                -- listo -- usada
+    //startTesting(5); //al_get                -- listo -- usada
+    //startTesting(6); //al_contains           -- listo -- usada
+    //startTesting(7); //al_set                -- listo -- usada
+    //startTesting(8); //al_remove             -- listo -- usada
+    //startTesting(9); //al_clear              -- listo -- usada
+    //startTesting(10); //al_clone             -- listo -- usada
+    //startTesting(11); //al_push              -- listo -- usada
     //startTesting(12); //al_indexOf           -- listo
     //startTesting(13); //al_isEmpty           -- listo
     //startTesting(14); //al_pop               -- listo
     //startTesting(15); //al_subList           -- listo
-    //startTesting(16); //al_containsAll       -- listo
-    //startTesting(17); //al_sort              -- listo
+    //startTesting(16); //al_containsAll       -- listo -- usada
+    //startTesting(17); //al_sort              -- listo -- usada
 
 
     // Genero personas para usar en el ArrayList
