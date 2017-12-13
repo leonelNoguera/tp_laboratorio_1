@@ -1,0 +1,11 @@
+id: 1 - id de empleado: 100 - codigo de trabajo: 20 - cantidad de horas: 8 - precio unitario: 295.549988
+id: 2 - id de empleado: 107 - codigo de trabajo: 40 - cantidad de horas: 8 - precio unitario: 100.739998
+id: 3 - id de empleado: 108 - codigo de trabajo: 30 - cantidad de horas: 6 - precio unitario: 292.429993
+id: 4 - id de empleado: 111 - codigo de trabajo: 50 - cantidad de horas: 6 - precio unitario: 131.789993
+id: 5 - id de empleado: 113 - codigo de trabajo: 20 - cantidad de horas: 8 - precio unitario: 295.549988
+id: 6 - id de empleado: 117 - codigo de trabajo: 10 - cantidad de horas: 6 - precio unitario: 121.830002
+id: 7 - id de empleado: 121 - codigo de trabajo: 50 - cantidad de horas: 6 - precio unitario: 131.789993
+id: 8 - id de empleado: 131 - codigo de trabajo: 30 - cantidad de horas: 6 - precio unitario: 292.429993
+id: 9 - id de empleado: 133 - codigo de trabajo: 10 - cantidad de horas: 6 - precio unitario: 121.830002
+id: 10 - id de empleado: 137 - codigo de trabajo: 20 - cantidad de horas: 8 - precio unitario: 295.549988
+id: 11 - id de empleado: 141 - codigo de trabajo: 50 - cantidad de horas: 6 - precio unitario: 131.789993

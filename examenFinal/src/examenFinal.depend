@@ -1,0 +1,97 @@
+# depslib dependency file v1.0
+1512570009 source:d:\marcelonoguera\programacionlaboratorioi\examenfinal\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../inc/ArrayList.h"
+	"../inc/funciones.h"
+	"ArrayList.c"
+	"funciones.c"
+
+1512570009 .c"
+
+1496894678 d:\marcelonoguera\programacionlaboratorioi\examenfinal\inc\arraylist.h
+
+1512568379 d:\marcelonoguera\programacionlaboratorioi\examenfinal\inc\funciones.h
+
+1511528500 d:\marcelonoguera\programacionlaboratorioi\examenfinal\src\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/ArrayList.h"
+
+1511528500 rayList.h"
+
+1512571183 d:\marcelonoguera\programacionlaboratorioi\examenfinal\src\funciones.c
+	"../inc/funciones.h"
+	"../inc/empleado.h"
+	"../inc/ArrayList.h"
+	"empleado.c"
+	"registro.c"
+	<string.h>
+
+1512571183 
+
+1512569661 d:\marcelonoguera\programacionlaboratorioi\examenfinal\inc\empleado.h
+
+1512569709 d:\marcelonoguera\programacionlaboratorioi\examenfinal\src\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/Empleado.h"
+
+1512569709 pleado.h"
+
+1512569741 d:\marcelonoguera\programacionlaboratorioi\examenfinal\src\registro.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/Registro.h"
+
+1512569741 gistro.h"
+
+1512569757 d:\marcelonoguera\programacionlaboratorioi\examenfinal\inc\registro.h
+
+1512860817 source:/home/leonel/codetools/utnFra/programacionLaboratorioI/examenFinal/src/main.c
+	<stdio.h>
+	<stdlib.h>
+	"../inc/ArrayList.h"
+	"../inc/funciones.h"
+	"ArrayList.c"
+	"funciones.c"
+
+1496883878 /home/leonel/codetools/utnFra/programacionLaboratorioI/examenFinal/inc/ArrayList.h
+
+1512905909 /home/leonel/codetools/utnFra/programacionLaboratorioI/examenFinal/inc/funciones.h
+	"Empleado.h"
+	"Registro.h"
+
+1512859557 /home/leonel/codetools/utnFra/programacionLaboratorioI/examenFinal/src/ArrayList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/ArrayList.h"
+
+1512905945 /home/leonel/codetools/utnFra/programacionLaboratorioI/examenFinal/src/funciones.c
+	"../inc/funciones.h"
+	"../inc/Empleado.h"
+	"../inc/ArrayList.h"
+	"Empleado.c"
+	"Registro.c"
+	<string.h>
+
+1512860182 /home/leonel/codetools/utnFra/programacionLaboratorioI/examenFinal/inc/Empleado.h
+
+1512860173 /home/leonel/codetools/utnFra/programacionLaboratorioI/examenFinal/src/Empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/Empleado.h"
+
+1512858903 /home/leonel/codetools/utnFra/programacionLaboratorioI/examenFinal/src/Registro.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/Registro.h"
+
+1512860201 /home/leonel/codetools/utnFra/programacionLaboratorioI/examenFinal/inc/Registro.h
+
