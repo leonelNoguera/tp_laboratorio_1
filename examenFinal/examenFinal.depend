@@ -1,0 +1,117 @@
+# depslib dependency file v1.0
+1513176779 source:d:\marcelonoguera\programacionlaboratorioi\examenfinal\main.c
+	<stdio.h>
+	<stdlib.h>
+	"inc/ArrayList.h"
+	"inc/funciones.h"
+	"ArrayList.c"
+	"funciones.c"
+
+1513176779 .c"
+
+1513166614 d:\marcelonoguera\programacionlaboratorioi\examenfinal\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inc/ArrayList.h"
+
+1513166614 List.h"
+
+1513176753 d:\marcelonoguera\programacionlaboratorioi\examenfinal\funciones.c
+	"inc/funciones.h"
+	"inc/Cliente.h"
+	"inc/ArrayList.h"
+	"Cliente.c"
+	"Servicio.c"
+	<string.h>
+
+1513176753 
+
+1513147354 d:\marcelonoguera\programacionlaboratorioi\examenfinal\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/Empleado.h"
+
+1513147354 pleado.h"
+
+1513147364 d:\marcelonoguera\programacionlaboratorioi\examenfinal\registro.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/Registro.h"
+
+1513147364 gistro.h"
+
+1513147348 d:\marcelonoguera\programacionlaboratorioi\examenfinal\inc\arraylist.h
+
+1513171671 d:\marcelonoguera\programacionlaboratorioi\examenfinal\inc\funciones.h
+	"Cliente.h"
+	"Servicio.h"
+
+1513171671 h"
+
+1513167207 d:\marcelonoguera\programacionlaboratorioi\examenfinal\inc\cliente.h
+
+1513170451 d:\marcelonoguera\programacionlaboratorioi\examenfinal\inc\servicio.h
+
+1513168944 d:\marcelonoguera\programacionlaboratorioi\examenfinal\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inc/Cliente.h"
+
+1513168944 te.h"
+
+1513172417 d:\marcelonoguera\programacionlaboratorioi\examenfinal\servicio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inc/Servicio.h"
+
+1513172417 cio.h"
+
+1516293449 source:/home/leonel/Documentos/utnFra/programacionLaboratorioI/examenFinal/main.c
+	<stdio.h>
+	<stdlib.h>
+	"inc/ArrayList.h"
+	"inc/funciones.h"
+	"ArrayList.c"
+	"funciones.c"
+
+1513176951 /home/leonel/Documentos/utnFra/programacionLaboratorioI/examenFinal/inc/ArrayList.h
+
+1513176952 /home/leonel/Documentos/utnFra/programacionLaboratorioI/examenFinal/inc/funciones.h
+	"Cliente.h"
+	"Servicio.h"
+
+1516213746 /home/leonel/Documentos/utnFra/programacionLaboratorioI/examenFinal/inc/Cliente.h
+
+1516222069 /home/leonel/Documentos/utnFra/programacionLaboratorioI/examenFinal/inc/Servicio.h
+
+1513176946 /home/leonel/Documentos/utnFra/programacionLaboratorioI/examenFinal/ArrayList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inc/ArrayList.h"
+
+1516293175 /home/leonel/Documentos/utnFra/programacionLaboratorioI/examenFinal/funciones.c
+	"inc/funciones.h"
+	"inc/Cliente.h"
+	"inc/ArrayList.h"
+	"Cliente.c"
+	"Servicio.c"
+	<string.h>
+
+1516213739 /home/leonel/Documentos/utnFra/programacionLaboratorioI/examenFinal/Cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inc/Cliente.h"
+
+1513176953 /home/leonel/Documentos/utnFra/programacionLaboratorioI/examenFinal/Servicio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inc/Servicio.h"
+

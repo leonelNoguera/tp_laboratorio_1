@@ -1,0 +1,2 @@
+id_servicio,id_cliente,codTarea,fechaDeIngreso,costoDeReparacion
+0,0,2293186,2293237,34.000000

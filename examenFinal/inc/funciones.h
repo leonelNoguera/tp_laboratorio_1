@@ -1,23 +1,23 @@
-#include "Empleado.h"
-#include "Registro.h"
+#include "Cliente.h"
+#include "Servicio.h"
 
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
 
-void agregarEmpleado(ArrayList* empleados);
+void agregarCliente(ArrayList* clientes);
 void pedirNombre(char nombre[]);
 void pedirApellido(char apellido[]);
 int pedirDni();
-void mostrarEmpleados(ArrayList* empleados);
+void mostrarClientes(ArrayList* clientes);
 int buscarPorDni(int dni, ArrayList* this);
-int pedirIdEmpleado();
-int pedirIdRegistro();
-float obtenerPrecioUnitario(int cantidadDeHoras);
-void generarInformeRegistros(ArrayList* registros);
-void modificarEmpleado(ArrayList* empleados);
-void guardarEmpleadoPorId(ArrayList* empleados, Empleado* empleado, int id);
-Empleado* buscarEmpleadoPorId(ArrayList* empleados, int id);
-Registro* buscarRegistroPorId(ArrayList* registros, int id);
-void guardarEmpleadoPorId(ArrayList* empleados, Empleado* empleado, int id);
+int pedirIdCliente();
+int pedirIdServicio();
+float pedirCostoDeReparacion();
+void generarInformeServicios(ArrayList* servicios);
+void modificarCliente(ArrayList* clientes);
+void guardarClientePorId(ArrayList* clientes, Cliente* cliente, int id);
+Cliente* buscarClientePorId(ArrayList* clientes, int id);
+Servicio* buscarServicioPorId(ArrayList* servicios, int id);
+void guardarClientePorId(ArrayList* clientes, Cliente* cliente, int id);
 
 #endif // FUNCIONES_H_INCLUDED
